@@ -195,8 +195,7 @@ let navigation = document.querySelector('.navigation')
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
     let currentScrollPos = window.pageYOffset;
-    console.log(prevScrollpos);
-    console.log(currentScrollPos);
+   
   if (prevScrollpos > currentScrollPos) {
     navigation.classList.remove('open')
   } else {
