@@ -1,0 +1,178 @@
+.container-download {
+    @include big-tablet {
+        width: 94%;
+    }
+}
+.download-section {
+    @include tablet {
+        margin-top: 200px;
+        background-color: black;
+    }
+
+    &__row {
+        padding: 200px 0 100px;
+        @include flex-position(row,stretch,stretch);
+        flex-wrap: nowrap;
+        @include big-tablet {
+            flex-wrap: nowrap;
+        }
+        @include tablet {
+            flex-wrap: wrap;
+            padding: 0 0 100px;
+            margin-top: 200px;
+        }
+    }
+
+    &__image {
+        @include flex-position(row,stretch,stretch);
+        position: relative;
+        left: -123px;
+        width: 60%;
+        @include hd {
+            left: -30px;
+            flex-wrap: nowrap;
+        }
+        @include tablet {
+            left: 0;
+            margin: 0 auto -100px;
+            width: 251px;
+            top: -120px;
+            order: 1;
+        }
+        @include mobile {
+            width: 241px;
+       
+        }
+    }
+
+    &__discription {
+        background: #000;
+        position: relative;
+        left: -1000px;
+        width: 57%;
+        padding: 5em 2em 0 6em;
+    
+        @include hd {
+            padding: 3.5em 0 3em 4em;
+        }
+        @include big-tablet {
+            padding: 2em 2em 2em 2em;
+        }
+        @include tablet{
+            order:2;
+            left: 0;
+            width: 100%;
+            padding: 0px;
+        }
+        &.open {
+            animation: moveDiscription  1s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+            @include tablet {
+                animation: none;
+            }
+        }
+    }
+
+    &__title {
+        max-width: 380px;
+        @include fonts(calc(30px + 18 * (100vw / 1920)),700,normal);
+        line-height: 58px;
+        @include tablet {
+            max-width: 310px;
+            line-height: 40px;
+        }
+    }
+
+    &__subtitle {
+        padding: 1.8em 0 2.5em;
+        max-width: 380px;
+        @include fonts(calc(16px + 4 * (100vw / 1920)),300,normal);
+        color: $dark-color;
+        line-height: 30px;
+    }
+
+    &__button {
+        @include flex-position(row,space-around,stretch);
+        max-width: 400px;
+        
+    }
+
+    &__logo {
+        // background: url(../image/download-section/bck-logo.png)no-repeat center/cover ;
+        position: relative;
+        bottom: 100px;
+        right: -1000px;
+        width: 50%;
+        @include big-tablet {
+            width: 70%;
+        }
+        @include tablet {
+            position: static;
+            width: 251px
+        };
+
+        &.open {
+            animation: movePhone  1s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+            @include tablet {
+                animation: none;  
+            }
+        }
+
+    }
+    
+    &__image-restaraunt {
+        // background: url(../image/download-section/Рестораны.png)no-repeat center/cover ;
+        position: relative;
+        right: -917px;
+        width: 50%;
+        @include big-tablet {
+            width: 70%;
+        }
+        @include tablet {
+            position: static;
+            width: 241px;
+        };  
+    }
+
+    &__image-restaraunt.open {
+        animation: movePhone  1.3s;
+        animation-fill-mode:forwards;
+        animation-timing-function: linear;
+        @include tablet {
+            animation: none;
+        }
+    }
+}
+
+@keyframes moveDiscription {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(1000px);
+    }
+}
+
+@keyframes movePhone {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(-1000px);
+    }
+}
+
+.download-section .slick-list {
+    overflow: hidden;
+    display: flex;
+    height: 471px;
+}
+
+.slick-track{
+    display: flex;
+}

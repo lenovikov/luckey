@@ -1,0 +1,263 @@
+.discription {
+   
+    &__row {
+        padding-top: 200px;
+        @include flex-position(row,center,stretch);
+        @include big-tablet{
+            padding-top: 0;
+        }
+    }
+
+    &__blocks {
+        width: 580px;
+        height: 560px;
+        @include flex-position(row,stretch,stretch);
+        flex: 0 1 auto;
+        overflow: hidden;
+
+        @include hd {
+            width: 480px;
+            height: 460px;
+        }
+        @include tablet {
+            width: 100%;
+            height: 100%;
+        }
+        
+        @include big-tablet {
+            order: 2;
+            @include flex-position(row,center,center);
+        }   
+    }
+
+    &__block {
+        position: relative;
+        width: 50%;
+        height: 50%;
+        padding: 80px 30px 80px 30px;
+        @include hd {
+            padding: 40px 20px 20px 30px;
+        }
+        @include tablet {
+            width: 290px;
+            height: 290px;
+            padding-top: 80px;
+        }
+    }
+
+    &__block-title {
+        @include roboto(calc(18px + 4 * (100vw / 1920)),700,normal);
+        line-height: 21,09px;
+    }
+
+    &__block-subtitle {
+        padding-top: .7em;
+        @include roboto(calc(14px + 4 * (100vw / 1920)),300,normal);
+        line-height: 20px;
+        
+    }
+
+    &__title {
+        position: relative;
+        width: 100%;
+        @include fonts(calc(32px + 40 * (100vw / 1920)),700,normal);
+        line-height: calc(50px + 20 * (100vw / 1920));
+        &::before{
+            content:'';
+            position: absolute;
+            right: 0;
+            background-color: $main-background-color;
+            width: 100%;  
+            height: 100%;      
+        }   
+        &.open::before{
+            animation: textopen 1s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+    }
+
+    &__subtitle {
+        position: relative;
+        width: 100%;
+        padding-top: 0.5em;
+        padding-bottom: 1em;
+        @include fonts(calc(26px + 20 * (100vw / 1920)),200,normal);
+
+        &::before{
+            content:'';
+            position: absolute;
+            right: 0;
+            background-color: $main-background-color;
+            width: 100%;  
+            height: 70%;      
+        }   
+
+        @include tablet {
+            text-align: center;
+        }
+    }
+
+    &__subtitle.open::before{
+        animation: textopen 1s;
+        animation-fill-mode:forwards;
+        animation-timing-function: linear;
+    }
+
+    &__text {
+        position: relative;
+        @include flex-position(column,center,stretch);
+        width: 37%;
+        padding-left: 100px;
+        flex: 2 1 auto;
+    
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0%;
+            height: 4px;
+            background-color: white;
+            @include big-tablet {
+                content: none;
+            }
+        }
+          @include big-tablet {
+            text-align: center; 
+            order: 1;
+            padding: 0;
+        }
+        &.open::after{
+            animation: lineleft  1s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+    }   
+}
+
+.discription__blocks div:nth-child(4){
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 115px;
+        right: 0;
+        width: 0%;
+        height: 4px;
+        background-color: white;
+    }    
+    order: 1;      
+}
+
+.discription__blocks div.open:nth-child(4)::after{
+    animation: lineleft  1s;
+    animation-fill-mode:forwards;
+    animation-timing-function: linear; 
+}
+
+.discription__blocks div:nth-child(1){
+    background-color: #A8DBE1;
+    right: -50%;   
+    order: 2;
+    @include tablet {
+        right: 0;
+    }
+}
+
+.discription__blocks div.open:nth-child(1){
+    animation: moveminiblocksright  .7s;
+    animation-fill-mode:forwards;
+    animation-timing-function: linear;
+    @include tablet {
+        animation: none;
+    }   
+ }
+
+.discription__blocks div:nth-child(2){
+    left: -50%;
+    order: 3;
+    background-color: #DABDF7;
+    @include tablet {
+        left: 0;
+        
+    }
+ }
+ .discription__blocks div.open:nth-child(2){
+    animation: moveminiblocksleft .5s;
+    animation-fill-mode:forwards;
+    animation-timing-function: linear;
+    @include tablet {
+        animation: none;
+    }
+ }
+
+ .discription__blocks div:nth-child(3){
+    background-color:  #6654F1;
+    color: white;
+    right: -50%;
+    order: 1;
+    @include tablet {
+        right: 0;
+    
+    }
+    order: 2;
+}
+ .discription__blocks div.open:nth-child(3){
+    background-color:  #6654F1;
+    color: white;
+    animation: moveminiblocksright .5s;
+    animation-fill-mode:forwards;
+    animation-timing-function: linear;
+    @include tablet {
+        animation: none;
+    }
+ }
+
+ @keyframes moveminiblocksleft {
+    from{
+        transform:translateX(0px);
+    }
+    to{
+        transform: translateX(100%);
+    }
+ }
+
+ @keyframes moveminiblocksright {
+    from{
+        transform:translateX(0px);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+ }
+
+ @keyframes textopen {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+ }
+
+ @keyframes lineleft {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 47%;
+    }
+ }
+
+.discription__blocks .slick-list {    
+    display: flex;
+    width: 290px;
+}
+
+ .slick-track{
+    display: flex;
+}
+

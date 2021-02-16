@@ -1,0 +1,331 @@
+
+.wrapper {
+    overflow: hidden;
+    background-color: $main-background-color;
+}
+
+.container {
+    width: 84%;
+    margin-left: auto;
+    @include big-tablet {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+.container-main {
+    height: 90%;
+    margin-top: 137px;
+    @include hd {
+        margin-top: 80px;
+        height: 94%;
+    }
+    @include big-tablet {
+        width: 90%;
+        margin: 100px auto 0;
+    }
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.bck-purple.open {
+    z-index: -5;
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+    @include big-tablet {
+        height: auto
+    }
+    
+    &__row{
+        @include flex-position(row,flex-end, center);
+        flex-wrap: nowrap;
+        height: 100%;
+        @include big-tablet {
+            flex-wrap: wrap;
+            margin-bottom: -200px;
+        }
+    }
+
+    &__left {
+        flex: 1 1 auto;
+        @include big-tablet {
+            padding: 1em 1em 0;
+        }
+    }
+
+    &__right {
+        height: 100%;
+        width: 80%;
+        @include flex-position(column,stretch,stretch);
+        @include big-tablet {
+            width: 100%;
+            position: relative;
+            top: -330px;
+        }
+        &.open {
+            position: relative;
+            right:0;
+            animation: movemain 0.5s;
+            animation-timing-function: linear;    
+        }
+    }
+
+    &__title {
+        position: relative;
+        @include fonts(calc(55px + 30 * (100vw / 1920)),bold,normal);
+        padding-top: 1em;       
+        &::before{
+            content:'';
+            position: absolute;
+            right: 0;
+            background-color: $main-background-color;
+            width: 100%;  
+            height: 100%;      
+        }        
+    }
+
+    &__tagline {
+        position: relative;
+        @include fonts(calc(30px + 30 * (100vw / 1920)),100,normal);
+        padding-top: 0.4em;
+        &::before{
+            content:'';
+            position: absolute;
+            right: 0;
+            background-color: $main-background-color;
+            width: 100%;  
+            height: 100%;      
+        }        
+    }
+
+    &__subtitle {
+        width:90%;
+        position: relative;
+        @include fonts(18,400,normal);
+        color:$dark-color;
+        padding-top: 1.5em;
+        line-height: 33px;
+        &::before{
+            content:'';
+            position: absolute;
+            right: 0;
+            background-color: $main-background-color;
+            width: 100%;  
+            height: 100%;      
+        }        
+    }
+
+    &__button {
+        position: relative;
+        @include flex-position(row,space-around,stretch);
+        padding-top: 1.7em;
+        margin-bottom: calc(100px + 50 * (100vw / 1920));
+        max-width: 400px;
+        &::before{
+            content:'';
+            position: absolute;
+            right: 0;
+            background-color: $main-background-color;
+            width: 100%;  
+            height: 100%;      
+        }             
+    }
+
+    &__image {
+        opacity: 0;
+        position: relative;
+        left: 150px;
+        z-index: 3;
+       @include big-tablet {
+           position: static;
+       }
+    }
+
+    &__image.open {
+        animation: phoneopacity 2s;
+        animation-fill-mode:forwards;
+        animation-timing-function: linear;
+    }
+
+
+     &__right--image {
+        height: 50%;
+        background: url('../image/main/natural-bck.png') no-repeat center/cover ;
+        @include big-tablet {
+            order: 2;
+            width: 100%;
+            height: 197px;
+        }
+     }   
+
+     &__right--gradient {
+        height: 50%;
+        background:$gradient;
+        @include big-tablet {
+            order:1;
+            width: 100%;
+            height: 197px;
+        }
+     }
+
+}
+
+.main-image {
+    width: 290px;
+    height: 500px;
+    @include hd {
+        width: 240px ;
+        height: 445px;
+        }
+        @include big-tablet {
+            width: 200px;
+            height: 400px;
+        }
+
+}
+
+.gradient {
+    color: transparent;    
+	-webkit-background-clip: text;
+	background-clip: text;
+	background-image: linear-gradient(90deg, #69EACB, #EACCF8, #6654F1);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
+
+.app-store {
+    @include flex-position(row,stretch,stretch);
+    padding: 8px 20px;
+    border-radius: 24px;
+    background-color: $background-for-link-App;
+    @include big-tablet{
+        padding: 7px 10px;
+    }
+
+    &__load {
+        margin-left: 15px
+    }
+
+    &__title {
+        @include fonts(calc(10px + 4 * (100vw / 1920)),normal,normal);
+        color: $dark-color;
+    }
+
+    &__subtitle {
+        @include fonts(calc(14px + 4 * (100vw / 1920)),500,normal);
+        margin-top: 5px;
+        color: $lite-color ;
+    }
+}
+
+.google-play {
+    @include flex-position(row,stretch,stretch);
+    padding: 8px 20px;
+    @include big-tablet{
+        padding: 7px 10px;
+    }
+    border-radius: 24px;
+    background-color: $background-for-link-App;
+
+    &__load {
+        margin-left: 15px
+    }
+
+    &__title {
+        @include fonts(calc(10px + 4 * (100vw / 1920)),normal,normal);
+        color: $dark-color;
+    }
+
+    &__subtitle {
+        @include fonts(calc(14px + 4 * (100vw / 1920)),500,normal);
+        margin-top: 5px;
+        color: $lite-color ;
+    }
+}
+
+.bck-purple {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #6B58F1;
+    z-index: 10;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        top: calc(-900px / 2);
+        left: calc(-900px / 2);
+        width: 900px;
+        height: 900px;
+        border-radius: 0 50% 80% 0;
+        background-color: $main-background-color;
+        animation: move 1s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes move {
+    from{
+      width: 900px;
+      height: 900px;
+    }
+  
+    to{
+        
+      width: calc(100% *2 );
+      height: calc(100% *3 );
+    }
+}
+
+// для мейна
+.main__title.open::before,
+.main__tagline.open::before,
+.main__subtitle.open::before,
+.main__button.open::before{
+    animation: beforeanim .2s;
+    animation-fill-mode:forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes beforeanim {
+    from{
+        width:100%;
+    }
+    
+    to{
+        width: 0%;
+    }
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+@keyframes  phoneopacity {
+    from {
+        opacity: .7;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+@keyframes movemain {
+    from{
+       transform: translateX(500px);
+    }
+  
+    to{
+        transform: translateX(0px); 
+    }
+}

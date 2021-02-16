@@ -1,0 +1,43 @@
+.footer {
+    padding: 50px 0;
+    @include mobile {
+        padding: 90px 0 30px;
+    }
+    &__row {
+        @include flex-position(row,stretch,center);
+        color:$dark-color;     
+        @include mobile {
+            @include flex-position(column,center,space-around);
+            height: 156px;
+            order: 1;
+        };  
+    }
+    &__list {
+        @include flex-position(row,stretch,stretch);
+        flex-grow: 2;
+    }
+    &__copy { 
+       flex-grow:1 ; 
+        @include mobile {
+            order: 3;
+        }
+    }
+
+    &__link {
+    text-decoration:none;
+    color:$dark-color;
+    flex-grow: 1;
+    @include mobile {
+        order: 2
+    }
+}
+}
+
+.container--footer {
+    width: 68%;
+    margin: 0 auto;
+
+    @include tablet {
+        width: 84%;
+    }
+}

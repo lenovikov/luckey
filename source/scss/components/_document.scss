@@ -1,0 +1,233 @@
+.document {
+    
+    width: 63%;
+    margin: 0 auto;
+    height: 100vh;
+    @include hd {
+        width: 90%;
+    }
+    &__container {
+        width: 100%;
+    }
+    
+    &__logo {
+        
+        background-color: black;
+        @include flex-position (row,center,stretch);
+        padding-bottom: 60px;
+    }
+
+    &__main {
+        @include flex-position(column,stretch,center);
+    }
+
+    &__partner-title {
+        @include fonts(calc(30px + 13 * (100vw / 1920)),bold,normal);
+        padding: 0 0 .9em;
+    }
+    &__partner {
+        @include flex-position(row,stretch,stretch);
+        flex-wrap: nowrap;
+        @include fonts(calc(18px + 9 * (100vw / 1920)),500,normal
+        );
+        color: $dark-color;
+       @include tablet{
+           flex-wrap: wrap;
+           justify-content: center;
+       }
+        
+    }
+
+    &__user-title {
+        @include fonts(calc(30px + 13 * (100vw / 1920)),bold,normal);
+        padding: 3.3em  0 .9em;
+    }
+
+    &__user{
+        @include flex-position(row,stretch,stretch);
+        @include fonts(calc(18px + 9 * (100vw / 1920)),500,normal
+        );
+        flex-wrap: nowrap;
+        color: $dark-color;
+        @include tablet {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    &__info {
+        display: none;
+        
+    }
+}
+
+.partner-text {
+    max-width: 380px;
+    text-align: center;
+    flex: 1 1 380px;
+    @include tablet {
+        padding: .5em 0 ;
+    }
+}
+.user-text {
+    max-width: 380px;
+    text-align: center;
+    flex: 1 1 380px;
+    @include tablet {
+        padding: .5em 0 ;
+    }
+}
+
+
+.document {
+    
+    &__container.open-list {
+        position: relative;
+        @include flex-position(row,stretch,stretch);
+        flex-wrap: nowrap;
+        height: 80%;
+        @include big-tablet {
+            position: static;
+        }
+        
+    }
+    
+    &__main.open-list {
+        @include flex-position(column,stretch,flex-start);
+        flex: 1 1 auto;
+        width: 30%;
+        @include big-tablet {
+            background: $gradient;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateX(-100vw);
+            transition: transform .3s ease-in-out;
+            @include flex-position(column,stretch,center);
+            padding-top: 100px;
+        }
+        @include mobile {
+            padding-top: 30px;
+        }
+    }
+
+    &__main.open-list.open {
+        transform: translateX(0);
+        transition: transform .3s ease-in-out;
+    }
+    
+    &__info.open-list {
+        display: block;
+        width: 70%;
+        height: 90%;
+        overflow: auto;
+        flex: 3 1 auto;
+        padding: 0 0 0 100px;
+        border-left:1px solid #F2F2F2;;
+        @include big-tablet {
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            border-left: none;
+
+        }
+    }
+
+    &__partner-title.open-list {
+        font-size: calc(15px + 10 * (100vw / 1920));
+        @include big-tablet {
+            @include fonts(calc(30px + 13 * (100vw / 1920)),bold,normal);
+            padding: 0 0 .9em;  
+            color: $lite-color;
+        }
+    }
+    
+    
+    &__partner.open-list {
+        flex-wrap: wrap;
+        @include fonts(calc(13px + 7 * (100vw / 1920)),500,normal);
+        @include big-tablet{
+            font-size: calc(18px + 9 * (100vw / 1920));
+            flex-wrap: nowrap;
+        }
+        @include tablet {
+            flex-wrap: wrap;
+        }
+        
+    }
+    &__partner-text.text.open-list {
+        text-align: none;
+        padding: 10px 0;
+        @include big-tablet {
+            max-width: 380px;
+            text-align: center;
+            flex: 1 1 380px;
+        }
+       
+       
+    }
+    &__user.open-list {
+        flex-wrap: wrap;
+        @include fonts(calc(13px + 7 * (100vw / 1920)),500,normal);
+        @include big-tablet{
+            font-size: calc(18px + 9 * (100vw / 1920));
+            flex-wrap: nowrap;
+        }
+        @include tablet {
+            flex-wrap: wrap;
+        }
+        
+    }
+    &__user-text.text.open-list {
+       padding: 10px 0;
+       @include big-tablet {
+        max-width: 380px;
+        text-align: center;
+        flex: 1 1 380px; 
+    }
+        
+    }
+
+    &__user-title.open-list {
+        font-size: calc(15px + 10 * (100vw / 1920));
+        @include big-tablet {
+            @include fonts(calc(30px + 13 * (100vw / 1920)),bold,normal);
+            color: white;
+        }
+    }
+    
+
+}
+
+
+
+.text.open-list {
+    padding: 10px 0;
+    text-align: left;
+    @include big-tablet {
+        text-align: center;   
+    };
+    
+}   
+.text:hover {
+    color: transparent;    
+	-webkit-background-clip: text;
+	background-clip: text;
+	background-image: linear-gradient(90deg, #EB7203 0%, #D20000 100%);
+}
+
+.btn-document {
+    display: none;
+   
+
+    &.open-list {
+        position: absolute;
+        left: 20px;
+        top: 40px;
+        @include big-tablet {
+            display: block;
+        }
+    }
+}

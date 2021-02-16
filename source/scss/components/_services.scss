@@ -1,0 +1,329 @@
+
+.container-services {
+    @include big-tablet {
+        margin: 0 auto;
+        width: 100%;   
+    }
+    @include mobile {
+        width: 100%;
+    }
+}
+.services {
+    padding-top: 300px;
+    @include big-tablet {
+        padding-top: 0;
+        background: $gradient;
+    }
+
+    &__row {
+        @include flex-position(row,stretch,stretch);
+        position: relative;
+        min-width: 0;
+        overflow: hidden;
+        @include big-tablet {
+            justify-content: center
+        }
+    }
+
+    &__top {
+        @include flex-position(row,stretch,stretch);
+        @include big-tablet {
+            @include flex-position(column,stretch,center);
+            width: 100%;
+        }
+    }
+
+    &__square {
+        position: relative;
+        width: 580px;
+        height: 445px;
+        right: -100%;
+        @include hd {
+            width: 480px;
+            height: 370px;
+        }
+        @include big-tablet {
+            background: none;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            
+        }
+        &.open {
+            animation: moveminiblocksright .7s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+    }
+
+    &__text {
+        position: relative;
+        @include flex-position(column,center,flex-start);
+        width: 37%;
+        padding-left: 100px;
+        flex: 2 1 auto;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background-color: white;
+            @include big-tablet {
+                content: none;
+            }
+        }
+        @include big-tablet {
+            background-color: $main-background-color;
+            width: 100%;
+            padding: 0;
+            align-items: center;
+            order: 1;
+        }
+        &.open::after{
+            animation: lineWidth 0.5s 1s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+    }
+
+    &__discription {
+        @include fonts(calc(20px + 20 * (100vw / 1920)),500,normal);
+        color: $lite-color;
+        padding: 3em 2em 0;
+        @include big-tablet {
+            padding: 1.5em 0 1.5em;
+            text-align: center;
+            order:2
+        }
+    }
+
+    &__title {
+        position: relative;
+        @include fonts(calc(40px + 30 * (100vw / 1920)),700,normal);
+        padding-bottom: .3em;
+        &::before{
+            content:'';
+            position: absolute;
+            right: 0;
+            background-color: $main-background-color;
+            width: 100%;  
+            height: 100%;      
+        }   
+        @include big-tablet {
+            padding-top: 1.7em;
+        }
+        &.open::before {
+            animation: textopen .7s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+    }
+
+    &__subtitle {
+        position: relative;
+        @include fonts(calc(20px + 20 * (100vw / 1920)),200,normal);
+        padding-bottom: 2.3em;
+        &::before{
+            content:'';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $main-background-color;
+            width: 100%;  
+            height: 100%;      
+        }   
+        &.open::before {
+            animation: textopen 1s .7s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+    }
+   
+//!========================================================
+    &__list {
+        width: 100%;
+        position: relative;
+        right: -200%;
+        @include big-tablet {
+        right: 0;
+        top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        }
+        &.open {
+            animation: moveKart 1.4s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+            @include big-tablet {
+                animation: none;
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        width: 380px;
+        margin: 0 10px;
+        background-color: $background-for-link-App;
+        box-shadow: 4px 4px 28px rgba(0, 0, 0, 0.25);
+        @include big-tablet {
+            width: 300px;
+            margin: 0px 0px 150px;
+        }
+    }
+
+    &__animation {
+        position: absolute;
+        top:-105px;
+        width: 80%;
+        height: 52%;
+        left: 10%;
+        background-color:  $background-for-link-App;
+        box-shadow: 4px 4px 28px rgba(0, 0, 0, 0.25);
+        @include big-tablet{
+            top:-69px;
+            height: 52%;
+        }
+        @include mobile {
+            top:-69px;
+            height: 52%;
+        }
+    }
+
+    &__card-title {
+        @include fonts(calc(15px + 8 * (100vw / 1920)),600,normal);
+        text-align: center;
+        padding-top: 7em;
+        color: $lite-color;
+        @include hd{
+            padding-top: 5em; 
+        }
+        @include big-tablet {
+            padding-top: 3em;
+        }
+        @include tablet {
+            padding-top:5em ;
+        }
+    }
+
+
+    &__card-subtitle {
+        @include fonts(17px,normal,normal);  
+        text-align: center;
+        line-height: 31px;  
+        padding: 0.9em 1.9em 4em;
+        color: $dark-color;
+        @include big-tablet{
+            padding-bottom:2em ;
+            line-height: 20px;  
+        }
+        @include tablet {
+            padding-bottom:4em ;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        right: 156px;
+        top: calc(223px + 100 * (100vw / 1920));
+    }
+}
+
+.square {
+    position: relative;
+    overflow: hidden;
+    @include big-tablet {
+        order: 2;
+    }
+}
+
+//   ! картинки
+.choice {
+    background: url('../image/services-image/choice.png') no-repeat center/cover ;
+}
+.booking {
+    background: url('../image/services-image/booking.png') no-repeat center/cover ;
+}
+.pre-order {
+    background: url('../image/services-image/pre-order.png') no-repeat center/cover ;
+}
+
+.order {
+    background: url('../image/services-image/order.png') no-repeat center/cover ;
+}
+
+.bonus {
+    background: url('../image/services-image/bonus.png') no-repeat center/cover ;
+}
+
+.pay {
+    background: url('../image/services-image/pay.png') no-repeat center/cover ;
+}
+
+
+@keyframes moveKart {
+    from {
+        transform:translateX(0)
+    }
+    
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+@keyframes textopen {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+ }
+ @keyframes lineWidth {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 17%;
+    }
+ }
+//  ! слайдер
+
+.services__list .slick-list {
+    display: flex;
+    align-items: flex-end;
+}
+ .slick-track{
+    display: flex;
+}
+.services__list .slick-arrow {   
+    width:14px;
+    margin-left: 20px;
+    height: 18px;
+    border: none;
+    outline: none;
+    background: url('../image/services-image/Vector-left.svg') no-repeat center/cover ;
+    font-size: 0;
+}
+.services__list .slick-arrow.slick-prev{
+    position: absolute;
+    top:-175px;
+    left: 320px;
+    background: url('../image/services-image/Vector-left.svg') no-repeat center/cover ;
+}
+
+.services__list .slick-arrow.slick-next{
+    position: absolute;
+    top:-175px;
+    left: 360px;
+    background: url('../image/services-image/Vector-right.svg') no-repeat center/cover ;
+}
+
+.services__item .slick-slide {
+        width: 380px;
+}
