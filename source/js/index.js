@@ -1,19 +1,14 @@
 
-let fieldForCircle = document.querySelector('.navigation')
+
 let navigationList = document.querySelector('.navigation__list')
 let navigationBtn = document.querySelector('.navigation__btn')
 let navigationElement = document.querySelectorAll('.navigation__link');
-
 let wrapper = document.querySelector('.wrapper')
 let backPurple = document.querySelector('.bck-purple')
 let backMain = document.querySelector('.bck-main')
 let main = document.querySelector('.main__right')
 let textTitle = document.querySelector('.main__title')
-let textTagline = document.querySelector('.main__tagline')
-let textSubtitle = document.querySelector('.main__subtitle')
-let textButton = document.querySelector('.main__button')
 let mainImage =document.querySelector('.main__image')
-
 let miniBlocks = document.querySelectorAll('.discription__block')
 
 
@@ -105,8 +100,6 @@ function showMain() {
 }
 setTimeout(showMain,1000)
 
-
-
 //! скролл
 
 window.addEventListener('scroll', event =>{
@@ -140,7 +133,6 @@ function openText() {
 
 }
 
-
 function openCarusel() {
     let servicesCarusel = document.querySelector('.services__list')
     servicesCarusel.classList.add('open')
@@ -154,9 +146,6 @@ function openCarusel() {
     servicesText.classList.add('open')
 }
 
-
-
-
 function openDownload() {
     let downloadDiscription = document.querySelector('.download-section__discription')
     downloadDiscription.classList.add('open')
@@ -165,9 +154,6 @@ function openDownload() {
     let restPhone = document.querySelector('.download-section__image-restaraunt')
     restPhone.classList.add('open')
 }
-
-
-
 
 // ! прокрутка
 let navigation = document.querySelector('.navigation')
