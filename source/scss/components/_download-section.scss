@@ -8,7 +8,7 @@
         margin-top: 200px;
         background-color: black;
     }
-
+ 
     &__row {
         padding: 200px 0 100px;
         @include flex-position(row,stretch,stretch);
