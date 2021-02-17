@@ -19,10 +19,7 @@ $(document).ready(function(){
     $('.services__list').slick({
         slidesToShow:3,
         responsive: [{
-            breakpoint: 1260,
-            settings: {
-                slidesToShow:2 
-            },
+           
             breakpoint: 991,
             settings: 'unslick'
         }]
