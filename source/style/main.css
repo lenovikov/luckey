@@ -898,6 +898,12 @@ textarea {
   background-color: #222222;
   width: 100%;
   height: 100%;
+  -webkit-animation: textopen  .7s 1s;
+          animation: textopen  .7s 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .main__tagline {
@@ -916,6 +922,12 @@ textarea {
   background-color: #222222;
   width: 100%;
   height: 100%;
+  -webkit-animation: textopen  .7s 1.5s;
+          animation: textopen  .7s 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .main__subtitle {
@@ -937,6 +949,12 @@ textarea {
   background-color: #222222;
   width: 100%;
   height: 100%;
+  -webkit-animation: textopen .7s 2s;
+          animation: textopen .7s 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .main__button {
@@ -1192,36 +1210,6 @@ textarea {
   to {
     width: calc(100% *2);
     height: calc(100% *3);
-  }
-}
-
-.main__title.open::before,
-.main__tagline.open::before,
-.main__subtitle.open::before,
-.main__button.open::before {
-  -webkit-animation: beforeanim .2s;
-          animation: beforeanim .2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-}
-
-@-webkit-keyframes beforeanim {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0%;
-  }
-}
-
-@keyframes beforeanim {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0%;
   }
 }
 

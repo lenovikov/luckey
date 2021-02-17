@@ -105,28 +105,7 @@ function showMain() {
 }
 setTimeout(showMain,1000)
 
-function addAnamationText(element) {
-    return new Promise((resolve) => {
-        setTimeout(()=> {element.classList.add('open')
-        resolve()
-        },2000)
-       
-    })
-}
 
-function addAnamationTextMin(element) {
-    return new Promise((resolve) => {
-        setTimeout(()=> {element.classList.add('open')
-        resolve()
-        },200)
-       
-    })
-}
-
-addAnamationText(textTitle)
-.then(()=> addAnamationTextMin(textTagline))
-.then(()=> addAnamationTextMin(textSubtitle))
-.then(()=> addAnamationTextMin(textButton))
 
 //! скролл
 

@@ -83,7 +83,11 @@
             right: 0;
             background-color: $main-background-color;
             width: 100%;  
-            height: 100%;      
+            height: 100%;  
+            animation: textopen  .7s 1s;
+           
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
         }        
     }
 
@@ -97,7 +101,11 @@
             right: 0;
             background-color: $main-background-color;
             width: 100%;  
-            height: 100%;      
+            height: 100%;    
+            animation: textopen  .7s 1.5s;
+            // animation-delay: 3s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;  
         }        
     }
 
@@ -114,7 +122,10 @@
             right: 0;
             background-color: $main-background-color;
             width: 100%;  
-            height: 100%;      
+            height: 100%;   
+            animation: textopen .7s 2s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;   
         }        
     }
 
@@ -282,24 +293,9 @@
 }
 
 // для мейна
-.main__title.open::before,
-.main__tagline.open::before,
-.main__subtitle.open::before,
-.main__button.open::before{
-    animation: beforeanim .2s;
-    animation-fill-mode:forwards;
-    animation-timing-function: linear;
-}
 
-@keyframes beforeanim {
-    from{
-        width:100%;
-    }
-    
-    to{
-        width: 0%;
-    }
-}
+
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -329,3 +325,4 @@
         transform: translateX(0px); 
     }
 }
+
