@@ -2344,6 +2344,7 @@ textarea {
   position: relative;
   left: -123px;
   width: 60%;
+  height: 600px;
 }
 
 @media (max-width: 1300px) {
@@ -2351,6 +2352,12 @@ textarea {
     left: -30px;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 991px) {
+  .download-section__image {
+    height: 500px;
   }
 }
 
@@ -2469,6 +2476,7 @@ textarea {
   bottom: 100px;
   right: -1000px;
   width: 50%;
+  height: 100%;
 }
 
 @media (max-width: 991px) {
@@ -2504,6 +2512,7 @@ textarea {
   position: relative;
   right: -917px;
   width: 50%;
+  height: 100%;
 }
 
 @media (max-width: 991px) {
