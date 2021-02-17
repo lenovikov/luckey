@@ -28,9 +28,13 @@
         position: relative;
         left: -123px;
         width: 60%;
+        height: 600px;
         @include hd {
             left: -30px;
             flex-wrap: nowrap;
+        }
+        @include big-tablet{
+            height: 500px;
         }
         @include tablet {
             left: 0;
