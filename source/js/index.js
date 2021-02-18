@@ -58,8 +58,7 @@ $(document).ready(function(){
                breakpoint: 767,
                settings: {
                   slidesToShow: 1,
-                  instalSlide:3,
-                      
+                  instalSlide:3,     
             }
         }]
     })
@@ -157,12 +156,14 @@ let navigation = document.querySelector('.navigation')
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
     let currentScrollPos = window.pageYOffset;
-   
-  if (prevScrollpos > currentScrollPos) {
-    navigation.classList.remove('open')
-  } else {
-    navigation.classList.add('open')
-  }
+   if(currentScrollPos > 100) {
+    if (prevScrollpos > currentScrollPos) {
+        navigation.classList.remove('open')
+      } else {
+        navigation.classList.add('open')
+      }
+   }
+ 
   prevScrollpos = currentScrollPos;
 }
 
