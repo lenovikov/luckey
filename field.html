@@ -4,9 +4,338 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="source/js/field.js"></script>
+    <link rel="stylesheet" href="source/style/main.css">
     <title>luckey field</title>
 </head>
 <body>
-    
+    <div class="field__wrapper">
+        <header class="header-field">
+            <div class="header-field__wrapper">
+                <img src="/source/image/field/logo.svg" alt=""class="header-field__logo">
+                <div class="header-field__body">
+                    <div class="header-field__discription">
+                        <h1 class="header-field__title gradient">
+                            Luckey
+                        </h1>
+                        <h3 class="header-field__subtitle gradient">
+                            Присоединяйтесь.
+                        </h3>
+                        <p class="header-field__text">
+                            Станьте партнером сервиса Luckey! Для начала сотрудничества заполните Анкету вашего заведения.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="field__step">
+            <span class="step">1</span>
+            <span class="step">2</span>
+            <span class="step">3</span>
+            <span class="step">4</span>
+          </div>
+        <div class="form">
+             <form action="#" id='form' class="form__body">
+                <div class="position field__propfile">
+                    <h1 class="field__text profile">Анкета</h1>
+                    <div class="form__item">
+                        <label for="defCity" class="form__label">Укажите город</label>
+                        <input id="defCity" type="text" name="defCity" class="form__input req" onchange=" " disabled value="Минск">
+                    </div>
+                    <p class="form__text">Для начала работы с сервисом, пожалуйста, ознакомьтесь и согласитесь с <a href="">Условиями Оферты на оказание услуг</a>, а также внесите реквизиты. </p>
+                    <div class="form__item">
+                        <label for="nameOrg" class="form__label">Название юр. лица</label>
+                        <input id="nameOrg" type="text" name="nameOrg" class="form__input req" onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__item">
+                        <label for="UNP" class="form__label">УНП</label>
+                        <input id="UNP" type="text" name="unp" class="form__input req" onchange="checkInput(this.value,this.id)"  placeholder="XXX-XXX-XXX">
+                    </div>
+                    
+                    <p class="text-subtitle">Юридический адрес</p>
+                    <div class="form__item">
+                        <label for="legalCity" class="form__label">Город</label>
+                        <input id="legalCity" type="text" name="legalCity" class="form__input req"  disabled value="Минск">
+                    </div>
+                    <div class="form__item ">
+                        <label for="legalindex" class="form__label">Индекс</label>
+                        <input id="legalindex" type="text" name="legalindex" class="form__input req" onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__item">
+                        <label for="legalStreet" class="form__label">Улица</label>
+                        <input id="legalStreet" type="text" name="legalStreet" class="form__input req" onchange=" check(this.value,this.id)" >
+                    </div>
+                    <div class="form__item">
+                        <label for="legalhouse" class="form__label ">Дом/офис/квартира</label>
+                        <input id="legalhouse" type="text" name="legalhouse" class="form__input legalhouse req" onchange=" check(this.value,this.id)" placeholder="Дом">
+                        <input id="legalhouse" type="text" name="legalapartment" class="form__input legalhouse req" onchange=" check(this.value,this.id)" placeholder="Офис/квартира">
+                    </div>
+                    <div class="form__checkbox post-checkbox">
+                        <p for="legalPostAdress" class="form__label post">Почтовый адрес</p>
+                        <input id="legalPostAdress" type="checkbox" name="legalPostAdress" class="checkbox__input post-input">
+                        <label for="legalPostAdress" class="сheckbox__label post-label">Совпадает с юридическим?</label>
+                    </div>
+                    <div class="form__item legalPostAdressInd">
+                        <label for="legalPostAdressInd" class="form__label">Индекс</label>
+                        <input id="legalPostAdressInd" type="text" name="legalPostAdressInd" class="form__input" onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__item legalPostAdressCit">
+                        <label for="legalPostAdressCit" class="form__label">Город</label>
+                        <input id="legalPostAdressCit" type="text" name="legalPostAdressCit" class="form__input" onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__item legalPostAdressAdr">
+                        <label for="legalPostAdressAdr" class="form__label">Адрес</label>
+                        <input id="legalPostAdressAdr" type="text" name="legalPostAdressAdr" class="form__input" onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__item">
+                        <label for="nameDirector" class="form__label">ФИО Директора/управляющего</label>
+                        <input id="nameDirector" type="text" name="nameDirector" class="form__input req"onchange=" check(this.value,this.id)">
+                    </div>
+                </div><!-- profile -->
+
+
+               
+
+                <div class="position field__bank-data">
+                    <h2 class="field__text bank-data">Банковские реквизиты</h2>
+                    <div class="form__item">
+                        <label for="nameBank" class="form__label">Название банка</label>
+                        <input id="nameBank" type="text" name="nameBank" class="form__input req" onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__item">
+                        <label for="bic" class="form__label">БИК</label>
+                        <input id="bic" type="text" name="bic" class="form__input req"onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__item">
+                        <label for="adressBank" class="form__label">Адрес Банка</label>
+                        <input id="adressBank" type="text" name="adressBank" class="form__input req"onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__item">
+                        <label for="numberRasch" class="form__label">Номер расчетного счета</label>
+                        <input id="numberRasch" type="text" name="numberRasch" class="form__input req" onchange=" checkInput(this.value,this.id)" placeholder="28 символов">
+                    </div>
+                    <p class="text-subtitle">Данные контактного лица</p>
+                    <div class="form__item">
+                        <label for="contactFace" class="form__label">Контактное лицо</label>
+                        <input id="contactFace" type="text" name="contactFace" class="form__input req"onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__item">
+                        <label for="numbercontactFace" class="form__label">Телефон контактного лица</label>
+                        <input id="numbercontactFace" type="tel" name="numbercontactFace" class="form__input req" onchange=" checkInput(this.value,this.id)" placeholder ="+ 375(XX)XXX-XX-XX">
+                    </div>
+                    <div class="form__item">
+                        <label for="emailContactFace" class="form__label">Электронная почта контактного лица</label>
+                        <input id="emailContactFace" type="email" name="emaiContactFace" class="form__input req" onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__checkbox сheckbox__label--padding">
+                        <input id="services" type="checkbox" name="servicesBabk" class="checkbox__input req">
+                        <label for="services" class="сheckbox__label">Подтверждаю своё ознакомление и соглашаюсь с условиями <a href=""> Оферты на оказание услуг</a> Luckey, а также обязуюсь сохранять в тайне и считать конфиденциальной информацию о коммерческих условиях сотрудничества, технических особенностях сервиса Luckey и его функционала, а также иную информацию, переданную Luckey</label>
+                    </div>
+                    <div class="form__checkbox">
+                        <input id="dataProcessing" type="checkbox" name="dataProcessing" class="checkbox__input req">
+                        <label for="dataProcessing" class="сheckbox__label">Я даю свое согласие на передачу Luckey данных, в том числе моей персональной информации, указанных в настоящей анкете, и согласен с тем, что указанные данные, в том числе моя персональная информация, будут обрабатываться на условиях, определенных <a href="">Офертой на оказание услуг</a>.</label>
+                    </div>
+                </div> <!-- bank-data -->
+               
+
+                <div class="position field__info-place">
+                        <h2 class="field__text info-place">Информация о заведении</h2>
+                        <p>Введите информацию о Заведении, подключаемом к сервису Luckey. Данное Заведение будет привязано к юридическому лицу, указанному ранее.</p>
+                        <p class="text-subtitle">Контактные данные</p>
+                    <div class="form__item">
+                        <label for="institutionFormat" class="form__label">Формат заведения</label>
+                        <input id="institutionFormat" type="text" name="institutionFormat" class="form__input req" onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__item">
+                        <label for="institutionName" class="form__label">Название заведения</label>
+                        <input id="institutionName" type="text" name="institutionName" class="form__input req" onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="form__item">
+                        <label for="institutionCity" class="form__label">Город</label>
+                        <input id="institutionCity" type="text" name="institutionCity" class="form__input req" disabled value="Минск">
+                    </div>
+                    <div class="form__item">
+                        <label for="institutionAdress" class="form__label">Адрес</label>
+                        <input id="institutionAdress" type="text" name="institutionAdress" class="form__input req" onchange=" check(this.value,this.id)">
+                    </div>
+                    <div class="time">
+                        <p class="form__label">Режим работы</p>
+                        <div class="time__work">
+                            <div class="time__div">Пн<input class="time__input" type="time" id="time" name="timeMonFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+                            <div class="time__div">Вт<input class="time__input" type="time" id="time" name="timeTutFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+                            <div class="time__div">Ср<input class="time__input" type="time" id="time" name="timeWenFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+                            <div class="time__div">Чт<input class="time__input" type="time" id="time" name="timeThuFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+                            <div class="time__div">Пт<input class="time__input" type="time" id="time" name="timeFriFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+                            <div class="time__div">Сб<input class="time__input" type="time" id="time" name="timeSunFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+                            <div class="time__div">Вс<input class="time__input" type="time" id="time" name="timeSatFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+                        </div>
+                    </div>
+                    <div class="form__item">
+                        <label for="institutionNumber" class="form__label">Номер телефона</label>
+                        <input id="institutionNumber" type="tel" name="institutionNumber" class="form__input req" onchange=" checkInput(this.value,this.id)" placeholder="+375 (XX) XXX-XX-XX">
+                    </div>
+                    <div class="form__item">
+                        <label for="institutionWebsite" class="form__label">Сайт (если есть)</label>
+                        <input id="institutionWebsite" type="text" name="institutionWebsite" class="form__input" placeholder="Ссылка на ваш сайт">
+                    </div>
+                    <p class="text-subtitle">Особенности заведения</p>
+                    <div class="form__item">
+                        <label for="institutionTypeCook" class="form__label">Тип Кухни</label>
+                        <input id="institutionTypeCook" type="text" name="institutionTypeCook" class="form__input req" onchange=" check(this.value,this.id)">
+                        <p>Европейская / Белорусская / Домашняя / Азиатская / Русская / Итальянская / Грузинская / Китайская / Корейская / Авторская / Немецкая / Турецкая / Мексиканская / Индийская / Украинская / Испанская / Тайская</p>
+                    </div>
+                    <div class="form__item">
+                        <div class="form__title">Самовывоз?</div>
+                        <div class="form__item">
+                            <select name="pickup" class="select">
+                                <option value="">Да</option>
+                                <option value="">Нет</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form__item">
+                        <div class="form__label">Обслуживание</div>
+                        <select name="service" class="select">
+                            <option value="">Обслуживание официантами</option>
+                            <option value="">Самообслуживание</option>
+                        </select>
+                    </div>
+                    <div class="form__item">
+                        <label for="cookingTime" class="form__label">Среднее ремя приготовления</label>
+                        <input id="cookingTime" type="text" name="cookingTime" class="form__input req" onchange=" check(this.value,this.id)">
+                    </div>
+                </div> <!-- info-place -->
+                
+                <div class="position field__connected-services">
+                    <p class="text-subtitle last">Выберите подключаемые услги</p>
+                    <div class="form__checkbox">
+                        <input id="orderNow" type="checkbox" name="orderNow" class="checkbox__input req">
+                        <label for="orderNow" class="сheckbox__label">Заказ прямо сейчас!
+                            <p>Клиенты смогут сделать заказ в приложении, непосредственно находясь в Вашем заведении (без участия кассира и/или официанта).
+                                * Способ оплаты - только в приложении банковской картой.</p>
+                    </div>
+                       
+                    <div class="form__checkbox">
+                        <input id="preOder" type="checkbox" name="preOder" class="checkbox__input req">
+                        <label for="preOder" class="сheckbox__label">Предзаказ с условием самовывоза
+                            <p>Клиенты смогут сделать заказ через приложение к определенному времени с условием самовывоза.</p>
+                    </div>
+
+                    <div class="form__checkbox">
+                        <input id="preOderPlace" type="checkbox" name="preOderPlace" class="checkbox__input radio-chek req">
+                        <label for="preOderPlace" class="сheckbox__label ">Предзаказ на месте!
+                        <p>Ваши клиенты смогут оформить заказ через приложение к определенному времени.</p>
+                    </div>
+                <div class="form__item radio">
+                    <div class="option">
+                        <div class="option__item">
+                            <input id ="pickupWith"  class="option__radio" type="radio" value="Yes" name="pickupRadio">
+                            <label for="pickupWith" class="option__label">С условием Бронирования 
+                            <p>К предзаказу прилагается бронирование стола, заказ должен быть оформлен с подачей «на месте»).</p>
+                        </div>
+                        <div class="option__item">
+                            <input id ="pickupWithout" class="option__radio" type="radio" value="No" name="pickupRadio">
+                            <label for="pickupWithout" class="option__label">Без условия Бронирования 
+                                <p>Клиент, оформивший предзаказ, НЕ имеет зарезервированного стола и выбирает место согласно наполненности зала, заказ должен быть оформлен с подачей «на месте»).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__checkbox">
+                    <input id="pickupApp" type="checkbox" name="pickupApp" class="checkbox__input req">
+                    <label for="pickupApp" class="сheckbox__label">Бронирование столов
+                        <p>Клиенты смогут забронировать стол через приложение.</p>
+                        <div class="form__item">
+                            <div class="form__label">Депозит</div>
+                            <select name="deposit" class="select">
+                                <option value="">Да</option>
+                                <option value="">Нет</option>
+                            </select>
+                        </div>
+                </div>
+                
+
+
+                <div class="form__checkbox">
+                    <input id="accept" type="checkbox" name="accept" class="checkbox__input req">
+                    <label for="accept" class="сheckbox__label">Я даю свое согласие на передачу Luckey данных, в том числе моей персональной информации, указанных в настоящей форме, и согласен с тем, что указанные данные будут обрабатываться на условиях, определенных Офертой на оказание услуг.</label>
+                    
+                </div>
+            </div><!-- services -->
+                
+            <div class="field__but">
+                <p class="field__but-reset">Cбросить</p>   
+                <div class="field__but-unite">
+                    <button type="button" class="button-arr arr-left" id="prevBtn" onclick="nextPrev(-1)">
+                        <svg class="img-svg" width="20" height="18" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.255743 6.3785L6.03391 0.600204C6.19885 0.435262 6.41868 0.344727 6.65309 0.344727C6.88775 0.344727 7.10746 0.435392 7.2724 0.600204L7.79701 1.12495C7.96182 1.28963 8.05262 1.5096 8.05262 1.74413C8.05262 1.97853 7.96182 2.20591 7.79701 2.3706L4.42612 5.74891H15.1356C15.6185 5.74891 16 6.12692 16 6.60991V7.35176C16 7.83475 15.6185 8.25087 15.1356 8.25087H4.38787L7.79688 11.648C7.96169 11.813 8.05249 12.027 8.05249 12.2615C8.05249 12.4958 7.96169 12.7129 7.79688 12.8777L7.27227 13.4008C7.10733 13.5657 6.88762 13.6556 6.65296 13.6556C6.41855 13.6556 6.19872 13.5645 6.03378 13.3996L0.255613 7.62142C0.0902815 7.45595 -0.000644684 7.23508 6.67572e-06 7.00028C-0.000514984 6.76471 0.0902815 6.5437 0.255743 6.3785Z" fill="#6F5CF2"/>
+                            </svg>
+                    </button>
+                    <button type="button" class="button-arr" id="nextBtn" onclick="nextPrev(1)">
+                        <svg class="img-svg" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.6803 8.22288L12.4576 1.00001C12.2514 0.793834 11.9766 0.680664 11.6836 0.680664C11.3903 0.680664 11.1157 0.793996 10.9095 1.00001L10.2537 1.65594C10.0477 1.86179 9.93423 2.13675 9.93423 2.42992C9.93423 2.72292 10.0477 3.00715 10.2537 3.213L14.4674 7.43589H1.08048C0.476907 7.43589 0 7.90841 0 8.51215V9.43945C0 10.0432 0.476907 10.5633 1.08048 10.5633H14.5152L10.2539 14.8098C10.0479 15.016 9.93439 15.2835 9.93439 15.5766C9.93439 15.8695 10.0479 16.1409 10.2539 16.3469L10.9097 17.0007C11.1158 17.2069 11.3905 17.3192 11.6838 17.3192C11.9768 17.3192 12.2516 17.2054 12.4578 16.9992L19.6805 9.77652C19.8871 9.5697 20.0008 9.2936 20 9.00011C20.0006 8.70564 19.8871 8.42938 19.6803 8.22288Z" fill="#F9F9F9"/>
+                            </svg>                                
+                    </button>
+                    <button type="submit" class="form__button">Отправить</button>
+                </div>
+            </div>
+            
+             </form>
+        </div><!-- form -->
+        <footer class="footer-field">
+   
+                <ul class="footer__list">
+                    <li class="footer__element"><a href="" class="footer__element"><img src="source/image/footer/mail.svg" alt="почта майл"></a></li>
+                    <li class="footer__element"><a href="" class="footer__element"><img src="source/image/footer/telegram.svg" alt="телеграмм"></a></li>
+                    <li class="footer__element"><a href="" class="footer__element"><img src="source/image/footer/viber.svg" alt="вайбер"></a></li>
+                    <li class="footer__element"><a href="" class="footer__element"><img src="source/image/footer/insta.svg" alt="инстаграмм"></a></li>
+                    <li class="footer__element"><a href="" class="footer__element"><img src="source/image/footer/vk.svg" alt="вконтакте"></a></li>
+                </ul>
+                <p class="field__copy">&#169;2021Luckey.by</p>
+      
+        </footer><!-- footer -->
+    </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<h6 class="form__book">Бронирование столов </h6>
+<p>Клиенты могут забронировать стол через приложение:</p>
+<div class="form__checkbox">
+    <input id="servicesBook" type="checkbox" name="servicesBook" class="checkbox__input">
+    <label for="servicesBook" class="form__label">С внесением депозита (этот параметр можно регулировать в приложении в зависимости от Ваших возможностей и спроса, к примеру, вы можете принимать бронирование с депозитом только в пятницу и субботу с 18:00 до 22:00)</label>
+</div>
+<div class="form__checkbox">
+    <input id="servicesNoBook" type="checkbox" name="servicesNoBook" class="checkbox__input">
+    <label for="servicesNoBook" class="form__label">Без внесения депозита</label>
+</div>
+ -->
+
+
+
+                <!-- <h6 class="form__pay">Выберите способы оплаты заказов</h6>
+                <div class="form__checkbox">
+                    <label for="payCard" class="form__label">Заказ «Прямо сейчас»</label>
+                    <input id="payCard" checked type="checkbox" name="payCard" class="checkbox__input">
+                    <span>только в приложении картой </span>
+                </div>
+                <div class="form__checkbox">
+                    <div class="form__title">Предзаказ</div>
+                    <div>
+                        <input id="сardinApp"  type="checkbox" name="сardinApp" class="checkbox__input">
+                        <label for="сardinApp" class="form__label">В приложении картой</label>
+                    </div>
+                    <div>
+                        <input id="onPlace"  type="checkbox" name="onPlace" class="checkbox__input">
+                        <label for="onPlace" class="form__label">На месте(картой или наличными)</label>
+                    </div>
+                </div> -->

@@ -3148,4 +3148,600 @@ textarea {
     display: block;
   }
 }
+
+.field__wrapper {
+  width: 100%;
+}
+
+.checkbox.error .checkbox__label {
+  -webkit-box-shadow: 0 0 15px red;
+          box-shadow: 0 0 15px red;
+}
+
+.header-field {
+  background: url("../image/field/background-color.png") no-repeat center/cover;
+  width: 100%;
+}
+
+.header-field__wrapper {
+  width: 80%;
+  margin-left: auto;
+  padding-top: 30px;
+}
+
+.header-field__title {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: calc(70px + 20 * (100vw / 1920));
+  font-weight: bold;
+  font-style: normal;
+  padding: 1.6em 0 .1em;
+}
+
+.header-field__subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: calc(40px + 20 * (100vw / 1920));
+  font-weight: 200;
+  font-style: normal;
+  padding-bottom: 0.3em;
+}
+
+.header-field__text {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  max-width: 470px;
+  color: #9D9D9D;
+  padding-bottom: 11em;
+}
+
+.field__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.field__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.field__button {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  background-color: aqua;
+}
+
+.field__text {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: calc(30px + 14 * (100vw / 1920));
+  font-weight: 700;
+  font-style: normal;
+  padding-bottom: 1.4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.field__step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 100px 0;
+  width: 100%;
+  max-width: 580px;
+}
+
+.form {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.form__item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 20px 0px;
+}
+
+.form__item.error::after {
+  content: url("../image/field/cross.svg");
+  position: absolute;
+  top: 15px;
+  right: -25px;
+}
+
+.form__item.ok::after {
+  content: url("../image/field/ok.svg");
+  position: absolute;
+  top: 15px;
+  right: -25px;
+}
+
+.form__label {
+  max-width: 170px;
+  line-height: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.form__input {
+  width: 370px;
+  height: 50px;
+  padding: 0px 0px 0px 10px;
+  border: 1px solid white;
+  background-color: #F9F9F9;
+  border-radius: 8px;
+}
+
+.form__input:focus {
+  border: 1px solid #6F5CF2;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #BDBDBD;
+}
+
+.form__input:-ms-input-placeholder {
+  color: #BDBDBD;
+}
+
+.form__input::-ms-input-placeholder {
+  color: #BDBDBD;
+}
+
+.form__input::placeholder {
+  color: #BDBDBD;
+}
+
+.form__checkbox {
+  margin-bottom: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.form__checkbox.error {
+  position: relative;
+}
+
+.form__checkbox.error::after {
+  content: url("../image/field/cross.svg");
+  position: absolute;
+  top: 15px;
+  right: -25px;
+}
+
+.form__button {
+  display: none;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: calc(13px + 3 * (100vw / 1920));
+  font-weight: bold;
+  font-style: normal;
+  border: none;
+  border-radius: 43px;
+  color: #F9F9F9;
+  background-color: #6F5CF2;
+  padding: 20px 40px;
+}
+
+.form__text {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  font-style: normal;
+  line-height: 20px;
+}
+
+.form__text a {
+  text-decoration: underline;
+}
+
+.checkbox__input {
+  display: none;
+}
+
+.checkbox__input:checked + .сheckbox__label::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  content: url("../image/field/check.svg");
+  position: absolute;
+  top: 4px;
+  left: -36px;
+}
+
+.checkbox__input + .сheckbox__label:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 6px;
+  left: -40px;
+  background-color: #ffff;
+  border: 1px solid #9D9D9D;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.сheckbox__label {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: calc(13px + 3 * (100vw / 1920));
+  font-weight: 200;
+  font-style: normal;
+  line-height: 22px;
+  position: relative;
+  color: #222325;
+}
+
+.сheckbox__label a {
+  text-decoration: underline;
+}
+
+.сheckbox__label--padding {
+  padding-top: 79px;
+}
+
+.сheckbox__label:after {
+  content: url("../image/field/check.svg");
+  position: absolute;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.post {
+  margin-right: 120px;
+}
+
+.post-input + .post-label:before {
+  top: 0px;
+  left: -40px;
+}
+
+.post-input:checked + .post-label:after {
+  top: -4px;
+  left: -35px;
+}
+
+.select {
+  width: 380px;
+  height: 50px;
+  padding: 0px 0px 0px 10px;
+  border: none;
+  background-color: #F9F9F9;
+  border-radius: 8px;
+}
+
+.option {
+  padding-left: 45px;
+}
+
+.option__item {
+  margin-bottom: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.option__item input {
+  margin-right: 20px;
+}
+
+.option .option__label {
+  max-width: 90%;
+}
+
+.text-subtitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  padding: 80px 0 20px;
+}
+
+.last {
+  padding-top: 0px;
+}
+
+.coincides {
+  margin-right: 75px;
+}
+
+.legalhouse {
+  max-width: 150px;
+}
+
+.time__work {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.time__div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 70px;
+}
+
+.time__input {
+  margin: 15px 0px;
+  height: 52px;
+  border: none;
+  background-color: #F9F9F9;
+  border-radius: 8px;
+}
+
+.position {
+  display: none;
+}
+
+.step {
+  height: 60px;
+  width: 60px;
+  padding: 20px 0 0 23px;
+  background-color: #F9F9F9;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  color: #000;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+  background-color: #6F5CF2;
+  color: #F9F9F9;
+}
+
+.step.finish {
+  background-color: #ffff;
+  border: 3px solid #79D1CA;
+  font-size: 0px;
+  padding: 10px 0px 0px 10px;
+}
+
+.step.finish::after {
+  content: "\2714";
+  font-size: 40px;
+  color: #79D1CA;
+}
+
+.field__copy {
+  padding: 1em 0;
+}
+
+.footer-field {
+  width: 100%;
+  border-top: 0.5px solid #9D9D9D;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 60px;
+}
+
+.field__but {
+  padding: 50px 0px 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.field__but-unite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button-arr {
+  width: 50px;
+  height: 50px;
+  background-color: #6F5CF2;
+  border-radius: 50%;
+  border: none;
+}
+
+.button-arr:hover {
+  border: none;
+  background-color: #222325;
+}
+
+.button-arr:hover .img-svg path {
+  fill: #ffff;
+}
+
+.arr-left {
+  border: 3px solid #6F5CF2;
+  background-color: #ffff;
+  margin-right: 20px;
+}
+
+.arr-left:hover {
+  border: 3px solid #222325;
+  background-color: #ffff;
+}
+
+.arr-left:hover .img-svg path {
+  fill: #222325;
+}
+
+.field__but-reset {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  color: #6F5CF2;
+}
+
+.disc-error {
+  text-align: right;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  color: #D17979;
+}
 /*# sourceMappingURL=main.css.map */
