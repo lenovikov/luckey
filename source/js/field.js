@@ -1,3 +1,12 @@
+const errorLog = {
+  unp: 'Данного номера УНП не существует',
+  empty: 'Нужно ввести данные',
+  checkAcc: 'Данного расчетного счёта не существует',
+  checkNumber: 'невенрный формат номера'
+}
+
+//! ==================================
+
 
 const form = document.getElementById('form')
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -108,20 +117,24 @@ function validateForm() {
   return valid;
 }
 
-// ! передвижение формы
+
+
+
+
+// !==================================================================
 
 let currentTab = 0;
 showTab(currentTab)
 
 function showTab(n) {
+  
   let tab = document.querySelectorAll('.position')
   tab[n].style.display='block'
   let prevBut = document.getElementById("prevBtn")
   let nextBut = document.getElementById("nextBtn")
 
-  nextBut.addEventListener('click',()=>{
-    scroll(0,600)
-  })
+  scroll(0,600)
+ 
 
   if (n == 0) {
       prevBut.style.display = "none";
@@ -129,46 +142,41 @@ function showTab(n) {
       prevBut.style.display = "block";
       }
   
+    if(n < tab.length-1 ){
+      if(n>=2){
+        document.querySelector('.button-add').style.display ="block"
+      }else if(n<2){
+        document.querySelector('.button-add').style.display ="none"
+      }
+      nextBut.style.display = "block";
+      document.querySelector('.form__button').style.display = "none"
+    }
+
   if (n == (tab.length - 1)) {
       nextBut.style.display = "none";
       document.querySelector('.form__button').style.display = "block"
+      document.querySelector('.button-add').style.display ="none"
     }
-
-  
-
-  if(n < tab.length-1 ){
-    nextBut.style.display = "block";
-    document.querySelector('.form__button').style.display = "none"
-    
-  }
   fixStepIndicator(n)
-  showNumberTab(n)
 }
 
-function showNumberTab(value){
-  const tab = document.querySelectorAll('.position')
-  let field = document.querySelector('.info-place-value')
 
-  if(value >=2 && value<(tab.length-1)){
-    document.querySelector('.field__but-reset').insertAdjacentHTML('afterbegin',`
-    <button class="button-add">добавить заведение</button>`)
-    field.innerHTML = `Заведение № ${value-1}`
-  }else if(value === (tab.length-1)){
-    document.querySelector('.button-add').remove()
-  }
-  const buttonAdd = document.querySelector('.button-add')
+
+const buttonAdd = document.querySelector('.button-add')
   buttonAdd&&buttonAdd.addEventListener('click', ()=> {
-  addRest(value)
-  addStep(value)
+  addRest()
+  addStep()
   })
+
+function addStep(){
+      let field = document.querySelectorAll('.info-place-value')
+      field[field.length-1].innerHTML = `Заведение №${field.length}`
+      let x = document.querySelectorAll(".step");
+      x[x.length-1].insertAdjacentHTML('afterend',`
+      <span class="step">${x.length+1}</span>
+      `)
+      nextPrev(1)
 }
-
-function addStep(value){
-    let step = document.querySelectorAll('.step')
-    step[step.length-1]
-}
-
-
 
 
 function nextPrev(n) {
@@ -178,13 +186,13 @@ function nextPrev(n) {
   currentTab = currentTab + n
 
   if (currentTab >= tab.length) {
-      
       return false;
   }
   showTab(currentTab);
-
-  
 }
+
+
+
 
 function fixStepIndicator(n) {
   let x = document.querySelectorAll(".step");
@@ -194,47 +202,13 @@ function fixStepIndicator(n) {
   
   x[n].className += " active";
 }
-
-
-
-  const errorLog = {
-    unp: 'Данного номера УНП не существует',
-    empty: 'Нужно ввести данные',
-    checkAcc: 'Данного расчетного счёта не существует',
-    checkNumber: 'невенрный формат номера'
-  }
   
 
-  const buttonPost = document.querySelector('.post-input')
-  const buttonRadio = document.querySelector('.radio-chek')
-  
 
-  buttonPost.addEventListener('click',()=> {
-    if(buttonPost.checked === true) {
-      document.querySelectorAll('.legalPostAdress').forEach(element =>{
-        element.style.display ='none'
-      })}else {
-      document.querySelectorAll('.legalPostAdress').forEach(element =>{
-        element.style.display ='flex'
-    })}
-  })
-
-
-  buttonRadio.addEventListener('click',()=>{
-  if(buttonRadio.checked === true) {
-    document.querySelector('.radio').style.display = 'none'
-  }else {
-    document.querySelector('.radio').style.display = 'flex'
-  }
-})
-
-
-
-   
 function addRest(value){
   document.querySelector('.field__info-place').insertAdjacentHTML('afterend',
   `<div class="position field__info-place">
-  <h2 class="field__text info-place-value">Заведение ${value}</h2>
+  <h2 class="field__text info-place-value"></h2>
   <p>Введите информацию о Заведении, подключаемом к сервису Luckey. Данное Заведение будет привязано к юридическому лицу, указанному ранее.</p>
   <p class="text-subtitle">Контактные данные</p>
 <div class="form__item">
@@ -301,6 +275,34 @@ function addRest(value){
 </div>
 </div>`)
 }
+
+
+
+
+//! =========================================================
+const buttonPost = document.querySelector('.post-input')
+const buttonRadio = document.querySelector('.radio-chek')
+
+
+buttonPost.addEventListener('click',()=> {
+  if(buttonPost.checked === true) {
+    document.querySelectorAll('.legalPostAdress').forEach(element =>{
+      element.style.display ='none'
+    })}else {
+    document.querySelectorAll('.legalPostAdress').forEach(element =>{
+      element.style.display ='flex'
+  })}
+})
+
+
+buttonRadio.addEventListener('click',()=>{
+if(buttonRadio.checked === true) {
+  document.querySelector('.radio').style.display = 'none'
+}else {
+  document.querySelector('.radio').style.display = 'flex'
+}
+})
+
 
 
 

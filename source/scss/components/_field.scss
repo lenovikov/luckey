@@ -358,6 +358,9 @@
   .field__but-unite{
       @include flex-position(row,stretch,center)
   }
+  .field__but-text{
+    @include flex-position(row,stretch,center)
+}
   .button-arr {
       width: 50px;
       height: 50px;
@@ -388,7 +391,21 @@
   }
 
   
-
+.button-add {
+    position: relative;
+    cursor: pointer;
+    margin-left: 27px;
+    padding-right:10px;
+    @include fonts(16px,200,normal);
+    display: none;
+    &::before{
+        content: url('../image/field/add.svg');
+        position: absolute;
+        top: -3px;
+        left: -27px;
+    }
+    
+}
  
 
 
