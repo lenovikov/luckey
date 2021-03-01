@@ -164,17 +164,17 @@ function showTab(n) {
 
 const buttonAdd = document.querySelector('.button-add')
   buttonAdd&&buttonAdd.addEventListener('click', ()=> {
-  addRest()
+  console.log('add');
   addStep()
   })
 
 function addStep(){
-      let field = document.querySelectorAll('.info-place-value')
-      field[field.length-1].innerHTML = `Заведение №${field.length}`
       let x = document.querySelectorAll(".step");
       x[x.length-1].insertAdjacentHTML('afterend',`
       <span class="step">${x.length+1}</span>
       `)
+      console.log(x.length-1);
+      addRest(x.length-1)
       nextPrev(1)
 }
 
@@ -206,57 +206,58 @@ function fixStepIndicator(n) {
 
 
 function addRest(value){
-  document.querySelector('.field__info-place').insertAdjacentHTML('afterend',
+  console.log(value);
+  document.querySelector('.field__connected-services').insertAdjacentHTML('beforebegin',
   `<div class="position field__info-place">
-  <h2 class="field__text info-place-value"></h2>
+  <h2 class="field__text info-place-value">Заведение №${value}</h2>
   <p>Введите информацию о Заведении, подключаемом к сервису Luckey. Данное Заведение будет привязано к юридическому лицу, указанному ранее.</p>
   <p class="text-subtitle">Контактные данные</p>
 <div class="form__item">
   <label for="institutionFormat" class="form__label">Формат заведения</label>
-  <input id="institutionFormat" type="text" name="institutionFormat" class="form__input req" onchange=" check(this.value,this.id)">
+  <input id="institutionFormat" type="text" name="institutionFormat${value-1}" class="form__input req" onchange=" check(this.value,this.id)">
 </div>
 <div class="form__item">
   <label for="institutionName" class="form__label">Название заведения</label>
-  <input id="institutionName" type="text" name="institutionName" class="form__input req" onchange=" check(this.value,this.id)">
+  <input id="institutionName" type="text" name="institutionName${value-1}" class="form__input req" onchange=" check(this.value,this.id)">
 </div>
 <div class="form__item">
   <label for="institutionCity" class="form__label">Город</label>
-  <input id="institutionCity" type="text" name="institutionCity" class="form__input req" disabled value="Минск">
+  <input id="institutionCity" type="text" name="institutionCity${value-1}" class="form__input req" disabled value="Минск">
 </div>
 <div class="form__item">
   <label for="institutionAdress" class="form__label">Адрес</label>
-  <input id="institutionAdress" type="text" name="institutionAdress" class="form__input req" onchange=" check(this.value,this.id)">
+  <input id="institutionAdress" type="text" name="institutionAdress${value-1}" class="form__input req" onchange=" check(this.value,this.id)">
 </div>
 <div class="time">
   <p class="form__label">Режим работы</p>
   <div class="time__work">
-      <div class="time__div">Пн<input class="time__input" type="time" id="time" name="timeMonFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-      <div class="time__div">Вт<input class="time__input" type="time" id="time" name="timeTutFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-      <div class="time__div">Ср<input class="time__input" type="time" id="time" name="timeWenFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-      <div class="time__div">Чт<input class="time__input" type="time" id="time" name="timeThuFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-      <div class="time__div">Пт<input class="time__input" type="time" id="time" name="timeFriFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-      <div class="time__div">Сб<input class="time__input" type="time" id="time" name="timeSunFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-      <div class="time__div">Вс<input class="time__input" type="time" id="time" name="timeSatFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+      <div class="time__div">Пн<input class="time__input ${value-1}" type="time" id="time" name="timeMonFrom${value-1}"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+      <div class="time__div">Вт<input class="time__input ${value-1}" type="time" id="time" name="timeTutFrom${value-1}"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+      <div class="time__div">Ср<input class="time__input ${value-1}" type="time" id="time" name="timeWenFrom${value-1}"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+      <div class="time__div">Чт<input class="time__input ${value-1}" type="time" id="time" name="timeThuFrom${value-1}"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+      <div class="time__div">Пт<input class="time__input ${value-1}" type="time" id="time" name="timeFriFrom${value-1}"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+      <div class="time__div">Сб<input class="time__input ${value-1}" type="time" id="time" name="timeSunFrom${value-1}"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+      <div class="time__div">Вс<input class="time__input ${value-1}" type="time" id="time" name="timeSatFrom${value-1}"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
   </div>
 </div>
 <div class="form__item">
   <label for="institutionNumber" class="form__label">Номер телефона</label>
-  <input id="institutionNumber" type="tel" name="institutionNumber" class="form__input req" onchange=" checkInput(this.value,this.id)" placeholder="+375 (XX) XXX-XX-XX">
+  <input id="institutionNumber" type="tel" name="institutionNumber${value-1}" class="form__input req" onchange=" checkInput(this.value,this.id)" placeholder="+375 (XX) XXX-XX-XX">
 </div>
 <div class="form__item">
   <label for="institutionWebsite" class="form__label">Сайт (если есть)</label>
-  <input id="institutionWebsite" type="text" name="institutionWebsite" class="form__input" placeholder="Ссылка на ваш сайт">
+  <input id="institutionWebsite" type="text" name="institutionWebsite${value-1}" class="form__input" placeholder="Ссылка на ваш сайт">
 </div>
 <p class="text-subtitle">Особенности заведения</p>
 <div class="form__item">
   <label for="institutionTypeCook" class="form__label">Тип Кухни</label>
-  <input id="institutionTypeCook" type="text" name="institutionTypeCook" class="form__input req" onchange=" check(this.value,this.id)">
+  <input id="institutionTypeCook" type="text" name="institutionTypeCook ${value-1}" class="form__input req" onchange=" check(this.value,this.id)">
   <p>Европейская / Белорусская / Домашняя / Азиатская / Русская / Итальянская / Грузинская / Китайская / Корейская / Авторская / Немецкая / Турецкая / Мексиканская / Индийская / Украинская / Испанская / Тайская</p>
 </div>
 <div class="form__item">
   <div class="form__title">Самовывоз?</div>
   <div class="form__item">
-      <select name="pickup" class="select">
+      <select name="pickup${value-1}" class="select">
           <option value="">Да</option>
           <option value="">Нет</option>
       </select>
@@ -264,19 +265,29 @@ function addRest(value){
 </div>
 <div class="form__item">
   <div class="form__label">Обслуживание</div>
-  <select name="service" class="select">
+  <select name="service${value-1}" class="select">
       <option value="">Обслуживание официантами</option>
       <option value="">Самообслуживание</option>
   </select>
 </div>
 <div class="form__item">
   <label for="cookingTime" class="form__label">Среднее ремя приготовления</label>
-  <input id="cookingTime" type="text" name="cookingTime" class="form__input req" onchange=" check(this.value,this.id)">
+  <input id="cookingTime${value-1}" type="text" name="cookingTime" class="form__input req" onchange=" check(this.value,this.id)">
 </div>
 </div>`)
 }
 
 
+
+//! reset 
+let value = document.querySelector('.field__but-reset')
+value.addEventListener('click',event => {
+  formReset(event)
+})
+
+function formReset() {
+  console.log(event);
+}
 
 
 //! =========================================================
@@ -303,7 +314,10 @@ if(buttonRadio.checked === true) {
 }
 })
 
-
+let select = document.querySelector('.select')
+   select.addEventListener('click',(event)=>{
+   
+})
 
 
 

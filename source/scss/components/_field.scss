@@ -288,7 +288,9 @@
         border-radius: 8px;
         
     }
-
+    & .form__label {
+        padding-bottom: 20px;
+    }
 }
 
 
@@ -296,6 +298,12 @@
 .position {
     display: none;
 }
+
+.field__info-place{
+    @include fonts(16px,200,normal);
+    line-height: 20px;
+}
+
 .step {
     height: 60px;
     width: 60px;
