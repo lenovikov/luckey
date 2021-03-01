@@ -32,7 +32,7 @@
             <span class="step">1</span>
             <span class="step">2</span>
             <span class="step">3</span>
-            <span class="step">4</span>
+            
           </div>
         <div class="form">
              <form action="#" id='form' class="form__body">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="form__item">
                         <label for="UNP" class="form__label">УНП</label>
-                        <input id="UNP" type="text" name="unp" class="form__input req" onchange="checkInput(this.value,this.id)"  placeholder="XXX-XXX-XXX">
+                        <input id="UNP" type="text" name="unp" class="form__input req" onchange="checkInput(this.value,this.id)"  maxlength="9" placeholder="XXXXXXXXX">
                     </div>
                     
                     <p class="text-subtitle">Юридический адрес</p>
@@ -67,25 +67,25 @@
                     </div>
                     <div class="form__item">
                         <label for="legalhouse" class="form__label ">Дом/офис/квартира</label>
-                        <input id="legalhouse" type="text" name="legalhouse" class="form__input legalhouse req" onchange=" check(this.value,this.id)" placeholder="Дом">
-                        <input id="legalhouse" type="text" name="legalapartment" class="form__input legalhouse req" onchange=" check(this.value,this.id)" placeholder="Офис/квартира">
+                        <input id="legalhouse" type="text" name="legalhouse" class="form__input legalhouse req" onchange="check(this.value,this.id)" placeholder="Дом">
+                        <input id="legalhouse" type="text" name="legalapartment" class="form__input legalhouse req" onchange="check(this.value,this.id)" placeholder="Офис/квартира">
                     </div>
                     <div class="form__checkbox post-checkbox">
                         <p for="legalPostAdress" class="form__label post">Почтовый адрес</p>
                         <input id="legalPostAdress" type="checkbox" name="legalPostAdress" class="checkbox__input post-input">
                         <label for="legalPostAdress" class="сheckbox__label post-label">Совпадает с юридическим?</label>
                     </div>
-                    <div class="form__item legalPostAdressInd">
+                    <div class="form__item legalPostAdress">
                         <label for="legalPostAdressInd" class="form__label">Индекс</label>
-                        <input id="legalPostAdressInd" type="text" name="legalPostAdressInd" class="form__input" onchange=" check(this.value,this.id)">
+                        <input id="legalPostAdressInd " type="text" name="legalPostAdressInd" class="form__input" onchange="check(this.value,this.id)">
                     </div>
-                    <div class="form__item legalPostAdressCit">
+                    <div class="form__item legalPostAdress">
                         <label for="legalPostAdressCit" class="form__label">Город</label>
-                        <input id="legalPostAdressCit" type="text" name="legalPostAdressCit" class="form__input" onchange=" check(this.value,this.id)">
+                        <input id="legalPostAdressCit" type="text" name="legalPostAdressCit" class="form__input" onchange="check(this.value,this.id)">
                     </div>
-                    <div class="form__item legalPostAdressAdr">
+                    <div class="form__item legalPostAdress">
                         <label for="legalPostAdressAdr" class="form__label">Адрес</label>
-                        <input id="legalPostAdressAdr" type="text" name="legalPostAdressAdr" class="form__input" onchange=" check(this.value,this.id)">
+                        <input id="legalPostAdressAdr" type="text" name="legalPostAdressAdr" class="form__input" onchange="check(this.value,this.id)">
                     </div>
                     <div class="form__item">
                         <label for="nameDirector" class="form__label">ФИО Директора/управляющего</label>
@@ -112,7 +112,7 @@
                     </div>
                     <div class="form__item">
                         <label for="numberRasch" class="form__label">Номер расчетного счета</label>
-                        <input id="numberRasch" type="text" name="numberRasch" class="form__input req" onchange=" checkInput(this.value,this.id)" placeholder="28 символов">
+                        <input id="numberRasch" type="text" name="numberRasch" class="form__input req" onchange=" checkInput(this.value,this.id)"  maxlength="28" placeholder="28 символов">
                     </div>
                     <p class="text-subtitle">Данные контактного лица</p>
                     <div class="form__item">
@@ -121,7 +121,7 @@
                     </div>
                     <div class="form__item">
                         <label for="numbercontactFace" class="form__label">Телефон контактного лица</label>
-                        <input id="numbercontactFace" type="tel" name="numbercontactFace" class="form__input req" onchange=" checkInput(this.value,this.id)" placeholder ="+ 375(XX)XXX-XX-XX">
+                        <input id="numbercontactFace" type="tel" name="numbercontactFace" class="form__input req" onchange=" checkInput(this.value,this.id)"  maxlenght = "13"placeholder ="+ 375(XX)XXX-XX-XX">
                     </div>
                     <div class="form__item">
                         <label for="emailContactFace" class="form__label">Электронная почта контактного лица</label>
@@ -139,7 +139,7 @@
                
 
                 <div class="position field__info-place">
-                        <h2 class="field__text info-place">Информация о заведении</h2>
+                        <h2 class="field__text info-place-value"></h2>
                         <p>Введите информацию о Заведении, подключаемом к сервису Luckey. Данное Заведение будет привязано к юридическому лицу, указанному ранее.</p>
                         <p class="text-subtitle">Контактные данные</p>
                     <div class="form__item">
@@ -284,11 +284,11 @@
         <footer class="footer-field">
    
                 <ul class="footer__list">
-                    <li class="footer__element"><a href="" class="footer__element"><img src="source/image/footer/mail.svg" alt="почта майл"></a></li>
-                    <li class="footer__element"><a href="" class="footer__element"><img src="source/image/footer/telegram.svg" alt="телеграмм"></a></li>
-                    <li class="footer__element"><a href="" class="footer__element"><img src="source/image/footer/viber.svg" alt="вайбер"></a></li>
-                    <li class="footer__element"><a href="" class="footer__element"><img src="source/image/footer/insta.svg" alt="инстаграмм"></a></li>
-                    <li class="footer__element"><a href="" class="footer__element"><img src="source/image/footer/vk.svg" alt="вконтакте"></a></li>
+                    <li class="footer-field__element"><a href="" class="footer__element"><img src="source/image/field/mail.svg" alt="почта майл"></a></li>
+                    <li class="footer-field__element"><a href="" class="footer__element"><img src="source/image/field/telegram.svg" alt="телеграмм"></a></li>
+                    <li class="footer-field__element"><a href="" class="footer__element"><img src="source/image/field/viber.svg" alt="вайбер"></a></li>
+                    <li class="footer-field__element"><a href="" class="footer__element"><img src="source/image/field/insta.svg" alt="инстаграмм"></a></li>
+                    <li class="footer-field__element"><a href="" class="footer__element"><img src="source/image/field/vk.svg" alt="вконтакте"></a></li>
                 </ul>
                 <p class="field__copy">&#169;2021Luckey.by</p>
       

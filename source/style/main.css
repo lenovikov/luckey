@@ -3413,7 +3413,12 @@ textarea {
 }
 
 .form__text a {
+  color: #000;
   text-decoration: underline;
+}
+
+.form__text a:hover {
+  color: #6F5CF2;
 }
 
 .checkbox__input {
@@ -3453,11 +3458,16 @@ textarea {
 }
 
 .сheckbox__label a {
+  color: #222325;
   text-decoration: underline;
 }
 
+.сheckbox__label a:hover {
+  color: #6F5CF2;
+}
+
 .сheckbox__label--padding {
-  padding-top: 79px;
+  margin-top: 79px;
 }
 
 .сheckbox__label:after {
@@ -3622,16 +3632,27 @@ textarea {
 }
 
 .step.finish {
+  position: relative;
   background-color: #ffff;
   border: 3px solid #79D1CA;
   font-size: 0px;
-  padding: 10px 0px 0px 10px;
+  padding: 17px 0px 0px 14px;
+}
+
+.step.finish::before {
+  content: url("../image/field/big-check.svg");
+  color: #79D1CA;
 }
 
 .step.finish::after {
-  content: "\2714";
-  font-size: 40px;
-  color: #79D1CA;
+  content: url("../image/field/line.svg");
+  position: absolute;
+  top: 27px;
+  left: 66px;
+}
+
+.img-svg {
+  margin-top: 5px;
 }
 
 .field__copy {
@@ -3657,6 +3678,10 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 60px;
+}
+
+.footer-field__element {
+  margin: 0 5px;
 }
 
 .field__but {

@@ -150,9 +150,12 @@
     &__text {
         @include fonts(16px,200,normal);
         line-height:20px;
-
         & a{
-            text-decoration: underline;
+           color: #000;
+           text-decoration: underline;
+        }
+        & a:hover{
+            color: $color-field-dop;
         }
     }
 }
@@ -181,17 +184,22 @@
     cursor: pointer;
 }
 
+
 .сheckbox__label{
     @include fonts(calc(13px + 3 * (100vw / 1920)),200,normal);
     line-height: 22px;
     position: relative;
     color: #222325;
-    & a{
+    & a {
+        color: #222325;
         text-decoration: underline;
+    }
+    & a:hover{
+        color: $color-field-dop;
     }
 }
 .сheckbox__label--padding {
-    padding-top: 79px;
+    margin-top: 79px;
 }
 
 
@@ -307,20 +315,25 @@
   }
 
   .step.finish {
+      position: relative;
       background-color: #ffff;
       border: 3px solid #79D1CA;
       font-size: 0px;
-      padding: 10px 0px 0px 10px;
+      padding: 17px 0px 0px 14px;
+      &::before{
+          content: url('../image/field/big-check.svg');
+          color: #79D1CA;      
+      }
       &::after{
-          content: "\2714";
-          font-size: 40px;
-          color: #79D1CA;
-          
+          content: url('../image/field/line.svg');
+          position: absolute;
+          top: 27px;
+          left: 66px;
       }
   }
 
 
-
+.img-svg {margin-top: 5px;}
 
 
   .field__copy{
@@ -331,6 +344,9 @@
       border-top: 0.5px solid $dark-color;
       @include flex-position(column,stretch,center);
       padding-top:60px;
+  }
+  .footer-field__element{
+      margin: 0 5px;
   }
 
 
