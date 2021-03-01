@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="source/js/field.js"></script>
     <link rel="stylesheet" href="source/style/main.css">
-    <title>luckey field</title>
+    <title img src="/source/image/field/logo.svg">luckey field</title>
 </head>
 <body>
     <div class="field__wrapper">
@@ -32,6 +33,7 @@
             <span class="step">1</span>
             <span class="step">2</span>
             <span class="step">3</span>
+            
             
           </div>
         <div class="form">
@@ -121,11 +123,11 @@
                     </div>
                     <div class="form__item">
                         <label for="numbercontactFace" class="form__label">Телефон контактного лица</label>
-                        <input id="numbercontactFace" type="tel" name="numbercontactFace" class="form__input req" onchange=" checkInput(this.value,this.id)"  maxlenght = "13"placeholder ="+ 375(XX)XXX-XX-XX">
+                        <input id="numbercontactFace" type="tel" name="numbercontactFace" class="form__input req" onchange=" check(this.value,this.id)"  maxlenght = "13"placeholder ="+ 375(XX)XXX-XX-XX">
                     </div>
                     <div class="form__item">
                         <label for="emailContactFace" class="form__label">Электронная почта контактного лица</label>
-                        <input id="emailContactFace" type="email" name="emaiContactFace" class="form__input req" onchange=" check(this.value,this.id)">
+                        <input id="emailContactFace" type="email" name="emaiContactFace" class="form__input req" onchange=" checkInput(this.value,this.id)">
                     </div>
                     <div class="form__checkbox сheckbox__label--padding">
                         <input id="services" type="checkbox" name="servicesBabk" class="checkbox__input req">
@@ -172,21 +174,21 @@
                     </div>
                     <div class="form__item">
                         <label for="institutionNumber" class="form__label">Номер телефона</label>
-                        <input id="institutionNumber" type="tel" name="institutionNumber" class="form__input req" onchange=" checkInput(this.value,this.id)" placeholder="+375 (XX) XXX-XX-XX">
+                        <input id="institutionNumber" type="tel" name="institutionNumber" class="form__input req" onchange=" check(this.value,this.id)" placeholder="+375 (XX) XXX-XX-XX">
                     </div>
                     <div class="form__item">
                         <label for="institutionWebsite" class="form__label">Сайт (если есть)</label>
-                        <input id="institutionWebsite" type="text" name="institutionWebsite" class="form__input" placeholder="Ссылка на ваш сайт">
+                        <input id="institutionWebsite" type="text" name="institutionWebsite" class="form__input" onchange=" check(this.value,this.id)" placeholder="Ссылка на ваш сайт">
                     </div>
                     <p class="text-subtitle">Особенности заведения</p>
-                    <div class="form__item">
+                    <div class="form__item type">
                         <!-- <select name="pickup" class="select">
                             <option value="">Европейская</option>
                             <option value="">Белорусская </option>
                         </select> -->
                         <label for="institutionTypeCook" class="form__label">Тип Кухни</label>
                         <input id="institutionTypeCook" type="text" name="institutionTypeCook" class="form__input req" onchange=" check(this.value,this.id)">
-                        <!-- <p>Европейская / Белорусская / Домашняя / Азиатская / Русская / Итальянская / Грузинская / Китайская / Корейская / Авторская / Немецкая / Турецкая / Мексиканская / Индийская / Украинская / Испанская / Тайская</p> -->
+                        <p>Европейская / Белорусская / Домашняя / Азиатская / Русская / Итальянская / Грузинская / Китайская / Корейская / Авторская / Немецкая / Турецкая / Мексиканская / Индийская / Украинская / Испанская / Тайская</p>
                     </div>
                     <div class="form__item">
                         <div class="form__title">Самовывоз?</div>
@@ -217,20 +219,20 @@
                 <div class="position field__connected-services">
                     <p class="text-subtitle last">Выберите подключаемые услги</p>
                     <div class="form__checkbox">
-                        <input id="orderNow" type="checkbox" name="orderNow" class="checkbox__input req">
+                        <input id="orderNow" type="checkbox" name="orderNow" class="checkbox__input">
                         <label for="orderNow" class="сheckbox__label сheckbox__label--bold">Заказ прямо сейчас!
                             <p>Клиенты смогут сделать заказ в приложении, непосредственно находясь в Вашем заведении (без участия кассира и/или официанта).
                                 * Способ оплаты - только в приложении банковской картой.</p>
                     </div>
                        
                     <div class="form__checkbox">
-                        <input id="preOder" type="checkbox" name="preOder" class="checkbox__input req">
+                        <input id="preOder" type="checkbox" name="preOder" class="checkbox__input">
                         <label for="preOder" class="сheckbox__label сheckbox__label--bold">Предзаказ с условием самовывоза
                             <p>Клиенты смогут сделать заказ через приложение к определенному времени с условием самовывоза.</p>
                     </div>
 
                     <div class="form__checkbox">
-                        <input id="preOderPlace" type="checkbox" name="preOderPlace" class="checkbox__input radio-chek req">
+                        <input id="preOderPlace" type="checkbox" name="preOderPlace" class="checkbox__input radio-chek">
                         <label for="preOderPlace" class="сheckbox__label сheckbox__label--bold">Предзаказ на месте!
                         <p>Ваши клиенты смогут оформить заказ через приложение к определенному времени.</p>
                     </div>
@@ -249,19 +251,17 @@
                     </div>
                 </div>
                 <div class="form__checkbox">
-                    <input id="pickupApp" type="checkbox" name="pickupApp" class="checkbox__input req">
+                    <input id="pickupApp" type="checkbox" name="pickupApp" class="checkbox__input">
                     <label for="pickupApp" class="сheckbox__label сheckbox__label--bold">Бронирование столов
                         <p>Клиенты смогут забронировать стол через приложение.</p>
                         <div class="form__item">
                             <div class="form__label">Депозит</div>
                             <select name="deposit" class="select deposit">
-                                <option value="">Да</option>
-                                <option value="">Нет</option>
+                                <option value="Да">Да</option>
+                                <option value="Нет">Нет</option>
                             </select>
                         </div>
                 </div>
-                
-
 
                 <div class="form__checkbox">
                     <input id="accept" type="checkbox" name="accept" class="checkbox__input req">
@@ -273,7 +273,7 @@
             <div class="field__but">
                <div class="field__but-text">
                 <p class="button-add">Добавить заведение</p>
-                <p class="field__but-reset">Cбросить</p>  
+                <!-- <p class="field__but-reset">Cбросить</p>   -->
                </div> 
                 <div class="field__but-unite">
                     <button type="button" class="button-arr arr-left" id="prevBtn" onclick="nextPrev(-1)">

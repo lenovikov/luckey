@@ -10,7 +10,6 @@
           user-select: none;
 }
 
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -44,7 +43,6 @@ button {
 
 input {
   outline: none;
-  -webkit-user-select: text;
 }
 
 /* make sure to set some focus styles for accessibility */
@@ -3666,13 +3664,6 @@ textarea {
   color: #79D1CA;
 }
 
-.step.finish::after {
-  content: url("../image/field/line.svg");
-  position: absolute;
-  top: 27px;
-  left: 66px;
-}
-
 .img-svg {
   margin-top: 5px;
 }
@@ -3842,5 +3833,10 @@ textarea {
 .discauntPickup-span {
   margin-left: 10px;
   font-size: 18px;
+}
+
+.type {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 /*# sourceMappingURL=main.css.map */

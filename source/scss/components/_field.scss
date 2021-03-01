@@ -13,6 +13,8 @@
 
 }
 
+
+
 .header-field {
     background: url('../image/field/background-color.png') no-repeat center/cover ;
     // flex: 0 0 auto;
@@ -338,12 +340,7 @@
           content: url('../image/field/big-check.svg');
           color: #79D1CA;      
       }
-      &::after{
-          content: url('../image/field/line.svg');
-          position: absolute;
-          top: 27px;
-          left: 66px;
-      }
+     
   }
 
 
@@ -448,4 +445,9 @@
 .discauntPickup-span {
     margin-left: 10px;
     font-size: 18px;
+}
+
+
+.type {
+    flex-wrap: wrap;
 }
