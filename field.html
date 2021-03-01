@@ -139,7 +139,7 @@
                
 
                 <div class="position field__info-place">
-                        <h2 class="field__text info-place-value"></h2>
+                        <h2 class="field__text info-place-value">Заведение №1</h2>
                         <p>Введите информацию о Заведении, подключаемом к сервису Luckey. Данное Заведение будет привязано к юридическому лицу, указанному ранее.</p>
                         <p class="text-subtitle">Контактные данные</p>
                     <div class="form__item">
@@ -180,24 +180,32 @@
                     </div>
                     <p class="text-subtitle">Особенности заведения</p>
                     <div class="form__item">
+                        <!-- <select name="pickup" class="select">
+                            <option value="">Европейская</option>
+                            <option value="">Белорусская </option>
+                        </select> -->
                         <label for="institutionTypeCook" class="form__label">Тип Кухни</label>
                         <input id="institutionTypeCook" type="text" name="institutionTypeCook" class="form__input req" onchange=" check(this.value,this.id)">
-                        <p>Европейская / Белорусская / Домашняя / Азиатская / Русская / Итальянская / Грузинская / Китайская / Корейская / Авторская / Немецкая / Турецкая / Мексиканская / Индийская / Украинская / Испанская / Тайская</p>
+                        <!-- <p>Европейская / Белорусская / Домашняя / Азиатская / Русская / Итальянская / Грузинская / Китайская / Корейская / Авторская / Немецкая / Турецкая / Мексиканская / Индийская / Украинская / Испанская / Тайская</p> -->
                     </div>
                     <div class="form__item">
                         <div class="form__title">Самовывоз?</div>
                         <div class="form__item">
-                            <select name="pickup" class="select">
-                                <option value="">Да</option>
-                                <option value="">Нет</option>
+                            <select name="pickup" class="select pickup">
+                                <option value="Да">Да</option>
+                                <option value="Нет">Нет</option>
                             </select>
                         </div>
                     </div>
+                    <div class="form__item discauntPickup">
+                        <label for="discauntPickup" class="form__label">Скидка на самовывоз </label>
+                        <input id="discauntPickup" type="text" name="discauntPickup" class="form__input discauntPickup-input"><span class="discauntPickup-span">%</span>
+                    </div>
                     <div class="form__item">
                         <div class="form__label">Обслуживание</div>
-                        <select name="service" class="select">
-                            <option value="">Обслуживание официантами</option>
-                            <option value="">Самообслуживание</option>
+                        <select name="service" class="select service" >
+                            <option value="Облуживание официантами">Обслуживание официантами</option>
+                            <option value="Самообслуживание">Самообслуживание</option>
                         </select>
                     </div>
                     <div class="form__item">
@@ -210,20 +218,20 @@
                     <p class="text-subtitle last">Выберите подключаемые услги</p>
                     <div class="form__checkbox">
                         <input id="orderNow" type="checkbox" name="orderNow" class="checkbox__input req">
-                        <label for="orderNow" class="сheckbox__label">Заказ прямо сейчас!
+                        <label for="orderNow" class="сheckbox__label сheckbox__label--bold">Заказ прямо сейчас!
                             <p>Клиенты смогут сделать заказ в приложении, непосредственно находясь в Вашем заведении (без участия кассира и/или официанта).
                                 * Способ оплаты - только в приложении банковской картой.</p>
                     </div>
                        
                     <div class="form__checkbox">
                         <input id="preOder" type="checkbox" name="preOder" class="checkbox__input req">
-                        <label for="preOder" class="сheckbox__label">Предзаказ с условием самовывоза
+                        <label for="preOder" class="сheckbox__label сheckbox__label--bold">Предзаказ с условием самовывоза
                             <p>Клиенты смогут сделать заказ через приложение к определенному времени с условием самовывоза.</p>
                     </div>
 
                     <div class="form__checkbox">
                         <input id="preOderPlace" type="checkbox" name="preOderPlace" class="checkbox__input radio-chek req">
-                        <label for="preOderPlace" class="сheckbox__label ">Предзаказ на месте!
+                        <label for="preOderPlace" class="сheckbox__label сheckbox__label--bold">Предзаказ на месте!
                         <p>Ваши клиенты смогут оформить заказ через приложение к определенному времени.</p>
                     </div>
                 <div class="form__item radio">
@@ -242,11 +250,11 @@
                 </div>
                 <div class="form__checkbox">
                     <input id="pickupApp" type="checkbox" name="pickupApp" class="checkbox__input req">
-                    <label for="pickupApp" class="сheckbox__label">Бронирование столов
+                    <label for="pickupApp" class="сheckbox__label сheckbox__label--bold">Бронирование столов
                         <p>Клиенты смогут забронировать стол через приложение.</p>
                         <div class="form__item">
                             <div class="form__label">Депозит</div>
-                            <select name="deposit" class="select">
+                            <select name="deposit" class="select deposit">
                                 <option value="">Да</option>
                                 <option value="">Нет</option>
                             </select>
@@ -263,7 +271,10 @@
             </div><!-- services -->
                 
             <div class="field__but">
-                <p class="field__but-reset">Cбросить</p>   
+               <div class="field__but-text">
+                <p class="button-add">Добавить заведение</p>
+                <p class="field__but-reset">Cбросить</p>  
+               </div> 
                 <div class="field__but-unite">
                     <button type="button" class="button-arr arr-left" id="prevBtn" onclick="nextPrev(-1)">
                         <svg class="img-svg" width="20" height="18" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
