@@ -197,6 +197,12 @@
     & a:hover{
         color: $color-field-dop;
     }
+    &--bold{
+        font-weight: 700;
+    }
+    &--bold p {
+        font-weight: 200;
+    }
 }
 .сheckbox__label--padding {
     margin-top: 79px;
@@ -429,3 +435,17 @@
       @include fonts(16px,300,normal);
       color: #D17979;
   }
+
+
+.discauntPickup{
+    display: block;
+}
+.discauntPickup-input{
+    margin-left:35px;
+    max-width: 80px;
+    position: relative;
+}
+.discauntPickup-span {
+    margin-left: 10px;
+    font-size: 18px;
+}

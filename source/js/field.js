@@ -314,10 +314,17 @@ if(buttonRadio.checked === true) {
 }
 })
 
-let select = document.querySelector('.select')
-   select.addEventListener('click',(event)=>{
-   
+let select = document.querySelector('.pickup')
+
+select.addEventListener('change',event=> {
+  if(select.options[select.selectedIndex].value==="Нет"){
+    document.querySelector('.discauntPickup').style.display="none"
+  }else{
+    document.querySelector('.discauntPickup').style.display="block"
+  }
 })
+
+
 
 
 
