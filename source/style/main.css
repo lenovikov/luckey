@@ -10,6 +10,7 @@
           user-select: none;
 }
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -43,6 +44,7 @@ button {
 
 input {
   outline: none;
+  -webkit-user-select: text;
 }
 
 /* make sure to set some focus styles for accessibility */
@@ -3466,6 +3468,14 @@ textarea {
   color: #6F5CF2;
 }
 
+.сheckbox__label--bold {
+  font-weight: 700;
+}
+
+.сheckbox__label--bold p {
+  font-weight: 200;
+}
+
 .сheckbox__label--padding {
   margin-top: 79px;
 }
@@ -3609,8 +3619,20 @@ textarea {
   border-radius: 8px;
 }
 
+.time .form__label {
+  padding-bottom: 20px;
+}
+
 .position {
   display: none;
+}
+
+.field__info-place {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  font-style: normal;
+  line-height: 20px;
 }
 
 .step {
@@ -3721,6 +3743,24 @@ textarea {
           align-items: center;
 }
 
+.field__but-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .button-arr {
   width: 50px;
   height: 50px;
@@ -3753,6 +3793,25 @@ textarea {
   fill: #222325;
 }
 
+.button-add {
+  position: relative;
+  cursor: pointer;
+  margin-left: 27px;
+  padding-right: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  font-style: normal;
+  display: none;
+}
+
+.button-add::before {
+  content: url("../image/field/add.svg");
+  position: absolute;
+  top: -3px;
+  left: -27px;
+}
+
 .field__but-reset {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
   font-size: 16px;
@@ -3768,5 +3827,20 @@ textarea {
   font-weight: 300;
   font-style: normal;
   color: #D17979;
+}
+
+.discauntPickup {
+  display: block;
+}
+
+.discauntPickup-input {
+  margin-left: 35px;
+  max-width: 80px;
+  position: relative;
+}
+
+.discauntPickup-span {
+  margin-left: 10px;
+  font-size: 18px;
 }
 /*# sourceMappingURL=main.css.map */
