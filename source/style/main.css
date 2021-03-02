@@ -3554,6 +3554,14 @@ textarea {
   padding-top: 3px;
 }
 
+.pay-card {
+  margin-bottom: 2px;
+}
+
+.pay-field {
+  margin-left: 70px;
+}
+
 .post {
   margin-right: 120px;
 }
@@ -3889,12 +3897,23 @@ textarea {
   display: none;
 }
 
+.button-add::before {
+  content: url("../image/field/add-but.svg");
+  position: absolute;
+  top: -2px;
+  left: -27px;
+}
+
 .field__but-reset {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
   font-size: 16px;
   font-weight: bold;
   font-style: normal;
   color: #6F5CF2;
+}
+
+.field__but-reset:hover {
+  cursor: pointer;
 }
 
 .disc-error {

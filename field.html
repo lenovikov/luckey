@@ -146,7 +146,7 @@
                         <p class="text-subtitle">Контактные данные</p>
                     <div class="form__item">
                         <label for="institutionFormat" class="form__label">Формат заведения</label>
-                        <input id="institutionFormat" type="text" name="institutionFormat" class="form__input req" onchange=" check(this.value,this.id)">
+                        <input id="institutionFormat" type="text" name="institutionFormat" class="form__input req" placeholder="Ресторан" onchange=" check(this.value,this.id)">
                     </div>
                     <div class="form__item">
                         <label for="institutionName" class="form__label">Название заведения</label>
@@ -248,17 +248,18 @@
                             <label for="pickupWithout" class="option__label">Без условия Бронирования 
                                 <p>Клиент, оформивший предзаказ, НЕ имеет зарезервированного стола и выбирает место согласно наполненности зала, заказ должен быть оформлен с подачей «на месте»).</p>
                         </div>
-                        <p class="payment-method">Выберите способ / способы оплаты предзаказов</p>
-                        <div class="form__checkbox">
-                            <input id="payCard" type="checkbox" name="payCard" class="checkbox__input ">
-                            <label for="payCard" class="сheckbox__label сheckbox__label--bold pay-card">В приложении картой
-                        </div>
-                        <div class="form__checkbox">
-                            <input id="payCash" type="checkbox" name="payCash" class="checkbox__input ">
-                            <label for="payCash" class="сheckbox__label сheckbox__label--bold pay-cash">На месте(картой или наличными)
-                         </div>
+                    </div>                 
+                </div>
+                <p class="payment-method">Выберите способ / способы оплаты предзаказов</p>
+                <div class="pay-field">
+                    <div class="form__checkbox pay-card">
+                        <input id="payCard" type="checkbox" name="payCard" class="checkbox__input ">
+                        <label for="payCard" class="сheckbox__label сheckbox__label--bold pay-card">В приложении картой
                     </div>
-                 
+                    <div class="form__checkbox">
+                        <input id="payCash" type="checkbox" name="payCash" class="checkbox__input ">
+                        <label for="payCash" class="сheckbox__label сheckbox__label--bold pay-cash">На месте(картой или наличными)
+                    </div>
                 </div>
                 <div class="form__checkbox">
                     <input id="pickupApp" type="checkbox" name="pickupApp" class="checkbox__input">

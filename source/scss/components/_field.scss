@@ -266,6 +266,12 @@
 .pay-cash{
     padding-top: 3px;
 }
+.pay-card{
+    margin-bottom: 2px;
+}
+.pay-field {
+    margin-left: 70px;
+}
 
 
     
@@ -469,13 +475,21 @@
     margin-left: 27px;
     padding-right:10px;
     @include fonts(16px,200,normal);
-    display: none;    
+    display: none;  
+    &::before{
+        content: url('../image/field/add-but.svg');
+        position: absolute;
+        top: -2px;
+        left: -27px
+    }  
 }
  
   .field__but-reset {
       @include fonts(16px,bold,normal);
       color: $color-field-dop;
-
+      &:hover{
+        cursor: pointer;
+      }
   }
 
   .disc-error {

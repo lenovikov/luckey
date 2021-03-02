@@ -229,11 +229,11 @@ function addRest(value){
   document.querySelector('.field__connected-services').insertAdjacentHTML('beforebegin',
   `<div class="position field__info-place">
   <h2 class="field__text info-place-value">Заведение №${value}</h2>
-  <p>Введите информацию о Заведении, подключаемом к сервису Luckey. Данное Заведение будет привязано к юридическому лицу, указанному ранее.</p>
+  <p class="form__text">Введите информацию о Заведении, подключаемом к сервису Luckey. Данное Заведение будет привязано к юридическому лицу, указанному ранее.</p>
   <p class="text-subtitle">Контактные данные</p>
 <div class="form__item">
   <label for="institutionFormat${value-1}" class="form__label">Формат заведения</label>
-  <input id="institutionFormat${value-1}" type="text" name="institutionFormat${value-1}" class="form__input req" onchange=" check(this.value,this.id)">
+  <input id="institutionFormat${value-1}" type="text" name="institutionFormat${value-1}" class="form__input req" placeholder="Ресторан" onchange=" check(this.value,this.id)">
 </div>
 <div class="form__item">
   <label for="institutionName${value-1}" class="form__label">Название заведения</label>
@@ -261,7 +261,7 @@ function addRest(value){
 </div>
 <div class="form__item">
   <label for="institutionNumber${value-1}" class="form__label">Номер телефона</label>
-  <input id="institutionNumber${value-1}" type="tel" name="institutionNumber${value-1}" class="form__input req" onchange=" check(this.value,this.id)" placeholder="+375 (XX) XXX-XX-XX">
+  <input id="institutionNumber${value-1}" type="tel" name="institutionNumber${value-1}" class="form__input req" onchange="check(this.value,this.id)" placeholder="+375 (XX) XXX-XX-XX">
 </div>
 <div class="form__item">
   <label for="institutionWebsite${value-1}" class="form__label">Сайт (если есть)</label>
@@ -270,7 +270,7 @@ function addRest(value){
 <p class="text-subtitle">Особенности заведения</p>
 <div class="form__item type">
   <label for="institutionTypeCook" class="form__label">Тип Кухни</label>
-  <input id="institutionTypeCook" type="text" name="institutionTypeCook ${value-1}" class="form__input req" onchange=" check(this.value,this.id)">
+  <input id="institutionTypeCook" type="text" name="institutionTypeCook${value-1}" class="form__input req" onchange="check(this.value,this.id)">
   <p>Европейская / Белорусская / Домашняя / Азиатская / Русская / Итальянская / Грузинская / Китайская / Корейская / Авторская / Немецкая / Турецкая / Мексиканская / Индийская / Украинская / Испанская / Тайская</p>
 </div>
 <div class="form__item">
