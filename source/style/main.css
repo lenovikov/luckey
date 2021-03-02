@@ -4,7 +4,7 @@
    License: none (public domain)
 */
 * {
-  -webkit-user-select: none;
+  -webkit-user-select: text;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
@@ -43,6 +43,8 @@ button {
 
 input {
   outline: none;
+}
+input {
   -webkit-user-select: text;
 }
 
