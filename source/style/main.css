@@ -3410,6 +3410,7 @@ textarea {
   font-weight: 200;
   font-style: normal;
   line-height: 20px;
+  position: relative;
 }
 
 .form__text a {
@@ -3421,8 +3422,71 @@ textarea {
   color: #6F5CF2;
 }
 
+.form__text::before {
+  content: url("../image/field/alert-circle.svg");
+  position: absolute;
+  top: 0px;
+  left: -24px;
+}
+
+.info-about-place {
+  position: relative;
+}
+
+.info-about-place::before {
+  content: url("../image/field/alert-circle.svg");
+  position: absolute;
+  top: 0px;
+  left: -24px;
+}
+
+.option__radio:checked + .option__label::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: absolute;
+  top: 10.6px;
+  left: -35.2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #222325;
+}
+
+.option__radio + .option__label:before {
+  content: '';
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top: 6px;
+  left: -40px;
+  background-color: #ffff;
+  border: 1px solid #222325;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.option__label:after {
+  content: '';
+  position: absolute;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.option__label {
+  position: relative;
+}
+
 .checkbox__input {
   display: none;
+}
+
+.payment-method {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  padding-bottom: 1em;
+  color: #222325;
 }
 
 .checkbox__input:checked + .сheckbox__label::after {
@@ -3485,6 +3549,11 @@ textarea {
           transform: scale(0);
 }
 
+.pay-card,
+.pay-cash {
+  padding-top: 3px;
+}
+
 .post {
   margin-right: 120px;
 }
@@ -3537,6 +3606,10 @@ textarea {
 
 .option .option__label {
   max-width: 90%;
+}
+
+.option__radio {
+  display: none;
 }
 
 .text-subtitle {
@@ -3619,6 +3692,26 @@ textarea {
 
 .time .form__label {
   padding-bottom: 20px;
+}
+
+.deposit__form {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.deposit__text {
+  max-width: 380px;
+  padding-top: 20px;
+  margin-left: auto;
+  line-height: 20px;
+  position: relative;
+}
+
+.deposit__text::before {
+  content: url("../image/field/alert-circle.svg");
+  position: absolute;
+  top: 19px;
+  left: -18px;
 }
 
 .position {
@@ -3794,13 +3887,6 @@ textarea {
   font-weight: 200;
   font-style: normal;
   display: none;
-}
-
-.button-add::before {
-  content: url("../image/field/add.svg");
-  position: absolute;
-  top: -3px;
-  left: -27px;
 }
 
 .field__but-reset {
