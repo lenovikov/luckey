@@ -223,7 +223,7 @@ function addStep(){
 
 function nextPrev(n) {
   let tab = document.querySelectorAll('.position')
-  if(n==1 && !(validateForm())) {return false}
+  // if(n==1 && !(validateForm())) {return false}
   tab[currentTab].style.display = "none";
   currentTab = currentTab + n
 
@@ -288,7 +288,7 @@ function addRest(value){
 </div>
 <div class="form__item">
   <label for="institutionWebsite${value-1}" class="form__label">Сайт (если есть)</label>
-  <input id="institutionWebsite${value-1}" type="text" name="institutionWebsite${value-1}" class="form__input" placeholder="Ссылка на ваш сайт">
+  <input id="institutionWebsite${value-1}" type="text" name="institutionWebsite${value-1}" class="form__input" placeholder="Ссылка на ваш сайт" onchange=" check(this.value,this.id)">
 </div>
 <p class="text-subtitle">Особенности заведения</p>
 <div class="form__item type">
@@ -358,11 +358,39 @@ select.addEventListener('change',event=> {
   }
 })
 
+let deposit = document.querySelector('.deposit')
+
+deposit.addEventListener('change',()=> {
+  if(deposit.options[deposit.selectedIndex].value==="Нет"){
+    document.querySelector('.deposit__text').style.display="none"
+  }else{
+    document.querySelector('.deposit__text').style.display="block"
+  }
+})
 
 
 
 
+let buttonReset = document.querySelector('.field__but-reset')
+buttonReset.addEventListener('click',resetField)
+function resetField(){
+  let x  
+  let y
+  x = document.querySelectorAll(".position");
+  y = x[currentTab].querySelectorAll('.req');
 
+
+  for (i = 0; i < y.length; i++) {
+    y[i].value = '';
+    y[i].checked = false;
+  }
+
+  for (i = 0; i < y.length; i++) {
+  if (y[i].value == "") {
+    y[i].parentElement.classList.remove("ok") 
+    y[i].parentElement.classList.add("error") }
+  }
+}
   /* function formValidate() {
         let error = 0
         let formReq = document.querySelectorAll('.req')

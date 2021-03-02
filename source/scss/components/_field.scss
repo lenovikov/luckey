@@ -159,12 +159,75 @@
         & a:hover{
             color: $color-field-dop;
         }
+
+        position: relative;
+        &::before{
+        content: url('../image/field/alert-circle.svg');
+        position: absolute;
+        top: 0px;
+        left: -24px;
+    }
     }
 }
 
 
+.info-about-place {
+    position: relative;
+    &::before{
+        content: url('../image/field/alert-circle.svg');
+        position: absolute;
+        top: 0px;
+        left: -24px;
+    }
+}
+
+
+.option__radio:checked + .option__label::after {
+    transform: scale(1);
+    position: absolute;
+    top:10.6px;
+    left: -35.2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #222325;
+}
+.option__radio   +.option__label:before{
+    content: '';
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top:6px;
+    left: -40px;
+    background-color:#ffff;
+    border:1px solid #222325;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.option__label:after{
+    content:'';
+    position: absolute;
+    transform: scale(0);
+}
+
+.option__label {
+    position: relative;
+}
+
+
+
+
+
+
+
 .checkbox__input {
     display: none;
+}
+.payment-method {
+    @include fonts(16px,600,normal);
+    padding-bottom:1em;
+    color:#222325;
 }
 .checkbox__input:checked + .сheckbox__label::after {
     transform: scale(1);
@@ -185,6 +248,9 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+
+
 
 
 .сheckbox__label{
@@ -216,6 +282,13 @@
     position: absolute;
     transform: scale(0);
 }
+
+.pay-card,
+.pay-cash{
+    padding-top: 3px;
+}
+
+
     
 .post {
     margin-right: 120px;
@@ -229,6 +302,8 @@
     top: -4px;
     left: -35px;
 }
+
+
 
 
 
@@ -258,6 +333,11 @@
     & .option__label {
         max-width: 90%;
     }
+
+    &__radio {
+        display: none;
+    }
+
 }
 
 
@@ -301,6 +381,23 @@
     }
 }
 
+.deposit__form {
+    flex-wrap: wrap;
+}
+.deposit__text{
+    max-width: 380px;
+    padding-top: 20px;
+    margin-left: auto;
+    line-height: 20px;
+    position: relative;
+    &::before{
+        content: url('../image/field/alert-circle.svg');
+        position: absolute;
+        top: 19px;
+        left: -18px;
+    }
+}
+  
 
 // form
 .position {
@@ -408,14 +505,7 @@
     margin-left: 27px;
     padding-right:10px;
     @include fonts(16px,200,normal);
-    display: none;
-    &::before{
-        content: url('../image/field/add.svg');
-        position: absolute;
-        top: -3px;
-        left: -27px;
-    }
-    
+    display: none;    
 }
  
 

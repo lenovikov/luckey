@@ -123,7 +123,7 @@
                     </div>
                     <div class="form__item">
                         <label for="numbercontactFace" class="form__label">Телефон контактного лица</label>
-                        <input id="numbercontactFace" type="tel" name="numbercontactFace" class="form__input req" onchange=" check(this.value,this.id)"  maxlenght = "13"placeholder ="+ 375(XX)XXX-XX-XX">
+                        <input id="numbercontactFace" type="tel" name="numbercontactFace" class="form__input req" onchange=" check(this.value,this.id)"  maxlenght = "13" placeholder ="+ 375(XX)XXX-XX-XX">
                     </div>
                     <div class="form__item">
                         <label for="emailContactFace" class="form__label">Электронная почта контактного лица</label>
@@ -142,7 +142,7 @@
 
                 <div class="position field__info-place">
                         <h2 class="field__text info-place-value">Заведение №1</h2>
-                        <p>Введите информацию о Заведении, подключаемом к сервису Luckey. Данное Заведение будет привязано к юридическому лицу, указанному ранее.</p>
+                        <p class="form__text">Введите информацию о Заведении, подключаемом к сервису Luckey. Данное Заведение будет привязано к юридическому лицу, указанному ранее.</p>
                         <p class="text-subtitle">Контактные данные</p>
                     <div class="form__item">
                         <label for="institutionFormat" class="form__label">Формат заведения</label>
@@ -174,7 +174,7 @@
                     </div>
                     <div class="form__item">
                         <label for="institutionNumber" class="form__label">Номер телефона</label>
-                        <input id="institutionNumber" type="tel" name="institutionNumber" class="form__input req" onchange=" check(this.value,this.id)" placeholder="+375 (XX) XXX-XX-XX">
+                        <input id="institutionNumber" type="tel" name="institutionNumber" class="form__input req" onchange=" check(this.value,this.id)" maxlength="13" placeholder="+375 (XX) XXX-XX-XX">
                     </div>
                     <div class="form__item">
                         <label for="institutionWebsite" class="form__label">Сайт (если есть)</label>
@@ -248,19 +248,32 @@
                             <label for="pickupWithout" class="option__label">Без условия Бронирования 
                                 <p>Клиент, оформивший предзаказ, НЕ имеет зарезервированного стола и выбирает место согласно наполненности зала, заказ должен быть оформлен с подачей «на месте»).</p>
                         </div>
+                        <p class="payment-method">Выберите способ / способы оплаты предзаказов</p>
+                        <div class="form__checkbox">
+                            <input id="payCard" type="checkbox" name="payCard" class="checkbox__input ">
+                            <label for="payCard" class="сheckbox__label сheckbox__label--bold pay-card">В приложении картой
+                        </div>
+                        <div class="form__checkbox">
+                            <input id="payCash" type="checkbox" name="payCash" class="checkbox__input ">
+                            <label for="payCash" class="сheckbox__label сheckbox__label--bold pay-cash">На месте(картой или наличными)
+                         </div>
                     </div>
+                 
                 </div>
                 <div class="form__checkbox">
                     <input id="pickupApp" type="checkbox" name="pickupApp" class="checkbox__input">
                     <label for="pickupApp" class="сheckbox__label сheckbox__label--bold">Бронирование столов
                         <p>Клиенты смогут забронировать стол через приложение.</p>
-                        <div class="form__item">
-                            <div class="form__label">Депозит</div>
-                            <select name="deposit" class="select deposit">
-                                <option value="Да">Да</option>
-                                <option value="Нет">Нет</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="form__item deposit__form">
+                    <div class="form__label">Депозит</div>
+                    <select name="deposit" class="select deposit">
+                        <option value="Да">Да</option>
+                        <option value="Нет">Нет</option>
+                    </select>
+                    <p class="deposit__text">Размер и время депозита вы сможете указать
+                        в приложении.
+                        * Способ оплаты - только в приложении банковской картой.</p>
                 </div>
 
                 <div class="form__checkbox">
@@ -273,7 +286,7 @@
             <div class="field__but">
                <div class="field__but-text">
                 <p class="button-add">Добавить заведение</p>
-                <!-- <p class="field__but-reset">Cбросить</p>   -->
+                <p class="field__but-reset">Cбросить</p>  
                </div> 
                 <div class="field__but-unite">
                     <button type="button" class="button-arr arr-left" id="prevBtn" onclick="nextPrev(-1)">
