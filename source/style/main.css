@@ -43,6 +43,7 @@ button {
 
 input {
   outline: none;
+  -webkit-user-select: text;
 }
 
 /* make sure to set some focus styles for accessibility */
