@@ -13,7 +13,6 @@ const form = document.getElementById('form')
 document.addEventListener('DOMContentLoaded', ()=>{
 
     form.addEventListener('submit',formSend)
-
     async function formSend(e) {
         e.preventDefault()
         if(validateFormSubm()){
@@ -61,9 +60,6 @@ function checkInput(value,id){
     }}
 
 }
-
-    
-
 function validateEmail(value){
   let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
   if(reg.test(value) == false){
@@ -72,15 +68,6 @@ function validateEmail(value){
     return true
   }
 }
-
-
-
-
-
-
-
-
-
 function check(value,id){
   if(value ==''){
     addError(id)
@@ -88,8 +75,6 @@ function check(value,id){
     addOk(id)
   }
 }
-
-
 
 function infoError(id,mes){
   delInfoErro()
@@ -202,8 +187,6 @@ function showTab(n) {
   fixStepIndicator(n)
 }
 
-
-
 const buttonAdd = document.querySelector('.button-add')
   buttonAdd&&buttonAdd.addEventListener('click', ()=> {
   console.log('add');
@@ -220,7 +203,6 @@ function addStep(){
       nextPrev(1)
 }
 
-
 function nextPrev(n) {
   let tab = document.querySelectorAll('.position')
   if(n==1 && !(validateForm())) {return false}
@@ -233,9 +215,6 @@ function nextPrev(n) {
   showTab(currentTab);
 }
 
-
-
-
 function fixStepIndicator(n) {
   let x = document.querySelectorAll(".step");
   for (let i = 0; i < x.length-1; i++) {
@@ -245,8 +224,6 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
   
-
-
 function addRest(value){
   console.log(value);
   document.querySelector('.field__connected-services').insertAdjacentHTML('beforebegin',
@@ -368,9 +345,6 @@ deposit.addEventListener('change',()=> {
   }
 })
 
-
-
-
 let buttonReset = document.querySelector('.field__but-reset')
 buttonReset.addEventListener('click',resetField)
 function resetField(){
@@ -391,36 +365,3 @@ function resetField(){
     y[i].parentElement.classList.add("error") }
   }
 }
-  /* function formValidate() {
-        let error = 0
-        let formReq = document.querySelectorAll('.req')
-        
-        for(let index = 0; index < formReq.length;index++){
-            const input = formReq[index]
-            formRemoveError(input)
-            
-
-            if(input.getAttribute("type") === "checkBox" && input.checked === false){
-                formAddError(input)
-                error++
-            }else {
-                if(input.value ===''){
-                    formAddError(input)
-                    error++
-                }
-            }
-        }
-
-        return error
-    }
-
-
-    function formAddError(input){
-        input.parentElement.classList.add('error')
-        input.classList.add('error')
-    }
-
-    function formRemoveError(input){
-        input.parentElement.classList.remove('error')
-        input.classList.remove('error')
-    } */

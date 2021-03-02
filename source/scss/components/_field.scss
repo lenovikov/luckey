@@ -1,23 +1,13 @@
-// .form__item {
-//     margin:20px;
-// }
 .field__wrapper {
     width: 100%;
 }
-
-
-
-
 .checkbox.error .checkbox__label{
     box-shadow: 0 0 15px red;
 
 }
 
-
-
 .header-field {
     background: url('../image/field/background-color.png') no-repeat center/cover ;
-    // flex: 0 0 auto;
     width: 100%;
     &__wrapper{
         width: 80%;
@@ -138,7 +128,6 @@
         }
     }
 
-
     &__button {
         display: none;
         @include fonts(calc(13px + 3 * (100vw / 1920)),bold,normal);
@@ -215,12 +204,6 @@
     position: relative;
 }
 
-
-
-
-
-
-
 .checkbox__input {
     display: none;
 }
@@ -248,10 +231,6 @@
     border-radius: 4px;
     cursor: pointer;
 }
-
-
-
-
 
 .сheckbox__label{
     @include fonts(calc(13px + 3 * (100vw / 1920)),200,normal);
@@ -303,12 +282,6 @@
     left: -35px;
 }
 
-
-
-
-
-
-
 .select {
     width: 380px;
     height: 50px;
@@ -317,8 +290,6 @@
     background-color: $bck-input;
     border-radius: 8px;
 }
-
-
 .option {
     padding-left: 45px;
     &__item {
@@ -339,9 +310,6 @@
     }
 
 }
-
-
-
 //!текст
 .text-subtitle {
     @include flex-position(row,center,stretch);
@@ -358,7 +326,6 @@
 .legalhouse {
     max-width: 150px;
 }
-
 
 .time {
     &__work {
@@ -456,9 +423,6 @@
   .footer-field__element{
       margin: 0 5px;
   }
-
-
-
   .field__but {
       padding: 50px 0px 200px;
       @include flex-position(row,space-between,center)      
@@ -508,15 +472,12 @@
     display: none;    
 }
  
-
-
   .field__but-reset {
       @include fonts(16px,bold,normal);
       color: $color-field-dop;
 
   }
 
- 
   .disc-error {
       text-align: right;
       @include fonts(16px,300,normal);
@@ -536,7 +497,6 @@
     margin-left: 10px;
     font-size: 18px;
 }
-
 
 .type {
     flex-wrap: wrap;
