@@ -1,10 +1,7 @@
 .field__wrapper {
     width: 100%;
 }
-.checkbox.error .checkbox__label{
-    box-shadow: 0 0 15px red;
 
-}
 
 .header-field {
     background: url('../image/field/background-color.png') no-repeat center/cover ;
@@ -96,7 +93,30 @@
         line-height: 20px;
         @include fonts(16px,400,normal);
     }
+    .legalPostAdress{
+        display: none;
+    }
 
+    #cookingTime {
+        max-width: 126px;
+        margin-right: 10px;
+    }
+
+    #legalPostAdressInd{
+        max-width: 152px;
+        padding-left: 10px;
+    }
+
+    #legalindex{
+        max-width: 152px;
+        padding-left: 10px;
+    }
+    .index {
+        width: 380px;
+    }
+    .index-flex {
+        @include flex-position(row,stretch,center)
+    }
 
     &__input {
         width: 370px;
@@ -202,6 +222,11 @@
 
 .option__label {
     position: relative;
+    @include fonts(16px,600,normal);
+    & p{
+        padding-top: 10px;
+        font-weight: 200;
+    }
 }
 
 .checkbox__input {
@@ -233,7 +258,7 @@
 }
 
 .сheckbox__label{
-    @include fonts(calc(13px + 3 * (100vw / 1920)),200,normal);
+    @include fonts(16px,200,normal);
     line-height: 22px;
     position: relative;
     color: #222325;
@@ -245,7 +270,7 @@
         color: $color-field-dop;
     }
     &--bold{
-        font-weight: 700;
+        font-weight: 600;
     }
     &--bold p {
         font-weight: 200;
@@ -310,11 +335,13 @@
     & .option__label {
         max-width: 90%;
     }
-
-    &__radio {
+    &__radio{
         display: none;
     }
 
+}
+.radio {
+    display: none;
 }
 //!текст
 .text-subtitle {
@@ -363,6 +390,7 @@
     margin-left: auto;
     line-height: 20px;
     position: relative;
+    display: none;
     &::before{
         content: url('../image/field/alert-circle.svg');
         position: absolute;
@@ -419,6 +447,7 @@
 
   .field__copy{
       padding: 1em 0;
+      color: $color-input;
   }
   .footer-field{
       width: 100%;
@@ -500,6 +529,7 @@
 
 
 .discauntPickup{
+    margin-top: -30px;
     display: block;
 }
 .discauntPickup-input{
@@ -511,6 +541,13 @@
     margin-left: 10px;
     font-size: 18px;
 }
+
+.discauntPickup-span1 {
+    margin-left: 10px;
+    font-size: 16px;
+    color: $color-input;
+}
+
 
 .type {
     flex-wrap: wrap;

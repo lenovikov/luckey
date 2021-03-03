@@ -160,7 +160,7 @@ function showTab(n) {
   let prevBut = document.getElementById("prevBtn")
   let nextBut = document.getElementById("nextBtn")
 
-  scroll(0,600)
+  
  
 
   if (n == 0) {
@@ -170,6 +170,7 @@ function showTab(n) {
       }
   
     if(n < tab.length-1 ){
+      scroll(0,600)
       if(n>=2){
         document.querySelector('.button-add').style.display ="block"
       }else if(n<2){
@@ -189,7 +190,6 @@ function showTab(n) {
 
 const buttonAdd = document.querySelector('.button-add')
   buttonAdd&&buttonAdd.addEventListener('click', ()=> {
-  console.log('add');
   addStep()
   })
 
@@ -198,7 +198,6 @@ function addStep(){
       x[x.length-1].insertAdjacentHTML('afterend',`
       <span class="step">${x.length+1}</span>
       `)
-      console.log(x.length-1);
       addRest(x.length-1)
       nextPrev(1)
 }
@@ -225,7 +224,6 @@ function fixStepIndicator(n) {
 }
   
 function addRest(value){
-  console.log(value);
   document.querySelector('.field__connected-services').insertAdjacentHTML('beforebegin',
   `<div class="position field__info-place">
   <h2 class="field__text info-place-value">Заведение №${value}</h2>
@@ -282,6 +280,10 @@ function addRest(value){
       </select>
   </div>
 </div>
+<div class="form__item discauntPickup">
+<label for="discauntPickup" class="form__label">Скидка на самовывоз </label>
+<input id="discauntPickup" type="text" name="discauntPickup${value-1}" class="form__input discauntPickup-input"><span class="discauntPickup-span">%</span><span class="discauntPickup-span1">в(т.ч. 0)</span>
+</div>
 <div class="form__item">
   <div class="form__label">Обслуживание</div>
   <select name="service${value-1}" class="select">
@@ -319,9 +321,9 @@ buttonPost.addEventListener('click',()=> {
 
 buttonRadio.addEventListener('click',()=>{
 if(buttonRadio.checked === true) {
-  document.querySelector('.radio').style.display = 'none'
-}else {
   document.querySelector('.radio').style.display = 'flex'
+}else {
+  document.querySelector('.radio').style.display = 'none'
 }
 })
 

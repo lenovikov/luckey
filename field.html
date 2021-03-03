@@ -59,10 +59,6 @@
                         <label for="legalCity" class="form__label">Город</label>
                         <input id="legalCity" type="text" name="legalCity" class="form__input"  disabled value="Минск">
                     </div>
-                    <div class="form__item ">
-                        <label for="legalindex" class="form__label">Индекс</label>
-                        <input id="legalindex" type="text" name="legalindex" class="form__input req" onchange=" check(this.value,this.id)">
-                    </div>
                     <div class="form__item">
                         <label for="legalStreet" class="form__label">Улица</label>
                         <input id="legalStreet" type="text" name="legalStreet" class="form__input req" onchange=" check(this.value,this.id)" >
@@ -72,14 +68,18 @@
                         <input id="legalhouse" type="text" name="legalhouse" class="form__input legalhouse req" onchange="check(this.value,this.id)" placeholder="Дом">
                         <input id="legalhouse" type="text" name="legalapartment" class="form__input legalhouse req" onchange="check(this.value,this.id)" placeholder="Офис/квартира">
                     </div>
+                    <div class="form__item ">
+                        <label for="legalindex" class="form__label">Индекс</label>
+                        <div class="index"><input id="legalindex" type="text" name="legalindex" class="form__input req" onchange=" check(this.value,this.id)"></div>
+                    </div>
                     <div class="form__checkbox post-checkbox">
                         <p for="legalPostAdress" class="form__label post">Почтовый адрес</p>
-                        <input id="legalPostAdress" type="checkbox" name="legalPostAdress" class="checkbox__input post-input">
+                        <input id="legalPostAdress" type="checkbox" name="legalPostAdress" class="checkbox__input post-input" checked>
                         <label for="legalPostAdress" class="сheckbox__label post-label">Совпадает с юридическим?</label>
                     </div>
                     <div class="form__item legalPostAdress">
                         <label for="legalPostAdressInd" class="form__label">Индекс</label>
-                        <input id="legalPostAdressInd " type="text" name="legalPostAdressInd" class="form__input" onchange="check(this.value,this.id)">
+                        <div class="index"><input id="legalPostAdressInd" type="text" name="legalPostAdressInd" class="form__input" onchange="check(this.value,this.id)"></div>
                     </div>
                     <div class="form__item legalPostAdress">
                         <label for="legalPostAdressCit" class="form__label">Город</label>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="form__item">
                         <label for="numbercontactFace" class="form__label">Телефон контактного лица</label>
-                        <input id="numbercontactFace" type="tel" name="numbercontactFace" class="form__input req" onchange=" check(this.value,this.id)"  maxlength="13" placeholder ="+ 375(XX)XXX-XX-XX">
+                        <input id="numbercontactFace" type="tel" name="numbercontactFace" class="form__input req" onchange=" check(this.value,this.id)"  maxlength="13">
                     </div>
                     <div class="form__item">
                         <label for="emailContactFace" class="form__label">Электронная почта контактного лица</label>
@@ -174,7 +174,7 @@
                     </div>
                     <div class="form__item">
                         <label for="institutionNumber" class="form__label">Номер телефона</label>
-                        <input id="institutionNumber" type="tel" name="institutionNumber" class="form__input req" onchange=" check(this.value,this.id)" maxlength="13" placeholder="+375 (XX) XXX-XX-XX">
+                        <input id="institutionNumber" type="tel" name="institutionNumber" class="form__input req" onchange=" check(this.value,this.id)" maxlength="13">
                     </div>
                     <div class="form__item">
                         <label for="institutionWebsite" class="form__label">Сайт (если есть)</label>
@@ -201,7 +201,7 @@
                     </div>
                     <div class="form__item discauntPickup">
                         <label for="discauntPickup" class="form__label">Скидка на самовывоз </label>
-                        <input id="discauntPickup" type="text" name="discauntPickup" class="form__input discauntPickup-input"><span class="discauntPickup-span">%</span>
+                        <input id="discauntPickup" type="text" name="discauntPickup" class="form__input discauntPickup-input"><span class="discauntPickup-span">%</span><span class="discauntPickup-span1">в(т.ч. 0)</span>
                     </div>
                     <div class="form__item">
                         <div class="form__label">Обслуживание</div>
@@ -211,8 +211,11 @@
                         </select>
                     </div>
                     <div class="form__item">
-                        <label for="cookingTime" class="form__label">Среднее ремя приготовления</label>
+                        <label for="cookingTime" class="form__label">Среднее время приготовления</label>
+                       <div class="index index-flex">
                         <input id="cookingTime" type="text" name="cookingTime" class="form__input req" onchange=" check(this.value,this.id)">
+                        <p> Мин</p>
+                       </div>
                     </div>
                 </div> <!-- info-place -->
                 
@@ -269,8 +272,8 @@
                 <div class="form__item deposit__form">
                     <div class="form__label">Депозит</div>
                     <select name="deposit" class="select deposit">
-                        <option value="Да">Да</option>
                         <option value="Нет">Нет</option>
+                        <option value="Да">Да</option>
                     </select>
                     <p class="deposit__text">Размер и время депозита вы сможете указать
                         в приложении.
