@@ -52,11 +52,9 @@ function checkInput(value,id){
     if(validateEmail(value)){
       addOk(id)
       delInfoErro() 
-      console.log('ds');
     }else{
       infoError(id,'checkEmail')
       addError(id)
-      console.log('asd');
     }}
 
 }
@@ -160,9 +158,6 @@ function showTab(n) {
   let prevBut = document.getElementById("prevBtn")
   let nextBut = document.getElementById("nextBtn")
 
-  
- 
-
   if (n == 0) {
       prevBut.style.display = "none";
       } else {
@@ -191,6 +186,7 @@ function showTab(n) {
 const buttonAdd = document.querySelector('.button-add')
   buttonAdd&&buttonAdd.addEventListener('click', ()=> {
   addStep()
+  nextPrev(1)
   })
 
 function addStep(){
@@ -199,14 +195,18 @@ function addStep(){
       <span class="step">${x.length+1}</span>
       `)
       addRest(x.length-1)
-      nextPrev(1)
 }
 
 function nextPrev(n) {
   let tab = document.querySelectorAll('.position')
-  if(n==1 && !(validateForm())) {return false}
+  // if(n==1 && !(validateForm())) {return false}
+   
   tab[currentTab].style.display = "none";
   currentTab = currentTab + n
+  if(currentTab === tab.length){
+    
+  }
+
 
   if (currentTab >= tab.length) {
       return false;
@@ -299,10 +299,7 @@ function addRest(value){
 }
 
 
-
 //! reset 
-
-
 //! =========================================================
 const buttonPost = document.querySelector('.post-input')
 const buttonRadio = document.querySelector('.radio-chek')
@@ -329,7 +326,7 @@ if(buttonRadio.checked === true) {
 
 let select = document.querySelector('.pickup')
 
-select.addEventListener('change',event=> {
+select.addEventListener('change',()=> {
   if(select.options[select.selectedIndex].value==="Нет"){
     document.querySelector('.discauntPickup').style.display="none"
   }else{

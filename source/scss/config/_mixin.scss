@@ -53,3 +53,9 @@
         @content;
     }
 }
+
+@mixin field {
+    @media (max-width: 580px) {
+        @content;
+    }
+}

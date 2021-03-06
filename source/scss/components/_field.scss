@@ -10,24 +10,41 @@
         width: 80%;
         margin-left: auto;
         padding-top: 30px;
+        @include field{
+            width: 100%;
+            margin-left: 0px;
+            padding-left: 30px
+        }
     }
-  
+
     &__title{
-        @include fonts(calc(70px + 20 * (100vw / 1920)),bold,normal);
+        @include fonts(calc(60px + 30 * (100vw / 1920)),bold,normal);
         padding: 1.6em 0 .1em;
+        @include field{
+            font-size: 50px;
+        }
     }
     &__subtitle{
-        @include fonts(calc(40px + 20 * (100vw / 1920)),200,normal);
+        @include fonts(calc(30px + 30 * (100vw / 1920)),200,normal);
         padding-bottom: 0.3em;
+        @include field{
+            font-size: 30px;
+        }
     }
     &__text {
+    
         @include fonts(16px,normal,normal);
         max-width: 470px;
         color:$dark-color;
         padding-bottom: 11em;
+        @include field{
+            font-size: 20px;
+            padding-bottom: 7em;
+        }
     }
 }
 .field {
+    
     &__wrapper{
     @include flex-position(column,stretch,center);
     
@@ -61,13 +78,18 @@
     width: 100%;
     max-width: 580px;
     margin: 0 auto;
+    @include field{
+        padding: 0px 10px;
+    }
     
     &__item {
         position: relative;
         @include flex-position(row,space-between,center);
         flex-wrap: nowrap;
         margin: 20px 0px;
-        
+        @include field{
+            flex-wrap: wrap;
+        }        
     }
 
     &__item.error{
@@ -137,6 +159,9 @@
     &__checkbox {
         margin-bottom: 35px;
         @include flex-position(row,stretch,stretch);
+        @include field {
+            padding-left: 50px;
+        }
     }
     &__checkbox.error {
         position: relative;
@@ -156,6 +181,9 @@
         color: $lite-color;
         background-color:$color-field-dop;
         padding: 20px 40px;
+        @include field{
+            padding:15px 30px;
+        }
     }
 
     &__text {
@@ -320,6 +348,9 @@
     border: none;
     background-color: $bck-input;
     border-radius: 8px;
+    @include field{
+        width: 100%;
+    }
 }
 .option {
     padding-left: 45px;
@@ -367,6 +398,9 @@
     &__div {
         @include flex-position(column,space-around,center);
         max-width:70px;
+        @include field {
+            margin: 0px 5px;
+        }
     }
     &__input {
         margin: 15px 0px;
@@ -460,13 +494,20 @@
   }
   .field__but {
       padding: 50px 0px 200px;
-      @include flex-position(row,space-between,center)      
+      @include flex-position(row,space-between,center); 
+      @include field {
+          padding:30px 0px 60px;
+      }     
   }
   .field__but-unite{
-      @include flex-position(row,stretch,center)
+      @include flex-position(row,stretch,center);
+      @include field { 
+        margin: 0 auto 20px
+    }   
   }
   .field__but-text{
-    @include flex-position(row,stretch,center)
+    @include flex-position(row,stretch,center);
+    margin-bottom: 20px;
 }
   .button-arr {
       width: 50px;
@@ -481,6 +522,10 @@
       }
       &:hover .img-svg path{
         fill: #ffff;
+    }
+    @include field {
+        width: 40px;
+        height: 40px;
     }
 
   }
