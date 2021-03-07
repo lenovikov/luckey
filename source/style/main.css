@@ -3158,6 +3158,12 @@ textarea {
   width: 100%;
 }
 
+@media (max-width: 580px) {
+  .header-field {
+    background: url("../image/field/field-bck.jpg") no-repeat center/cover;
+  }
+}
+
 .header-field__wrapper {
   width: 80%;
   margin-left: auto;
@@ -3344,20 +3350,6 @@ textarea {
   }
 }
 
-.form__item.error::after {
-  content: url("../image/field/cross.svg");
-  position: absolute;
-  top: 15px;
-  right: -25px;
-}
-
-.form__item.ok::after {
-  content: url("../image/field/ok.svg");
-  position: absolute;
-  top: 15px;
-  right: -25px;
-}
-
 .form__label {
   max-width: 170px;
   line-height: 20px;
@@ -3384,10 +3376,11 @@ textarea {
 .form #legalindex {
   max-width: 152px;
   padding-left: 10px;
+  margin-right: 215px;
 }
 
 .form .index {
-  width: 380px;
+  position: relative;
 }
 
 .form .index-flex {
@@ -3515,6 +3508,20 @@ textarea {
   position: absolute;
   top: 0px;
   left: -24px;
+}
+
+.error::after {
+  content: url("../image/field/cross.svg");
+  position: absolute;
+  top: 15px;
+  right: -25px;
+}
+
+.ok::after {
+  content: url("../image/field/ok.svg");
+  position: absolute;
+  top: 15px;
+  right: -25px;
 }
 
 .info-about-place {
@@ -3789,17 +3796,17 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 70px;
 }
 
 @media (max-width: 580px) {
   .time__div {
-    margin: 0px 5px;
+    margin: 10px 10px;
   }
 }
 
