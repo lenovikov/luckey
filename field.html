@@ -63,13 +63,13 @@
                         <input id="legalStreet" type="text" name="legalStreet" class="form__input req" onchange=" check(this.value,this.id)" >
                     </div>
                     <div class="form__item">
-                        <label for="legalhouse" class="form__label ">Дом/офис/квартира</label>
-                        <input id="legalhouse" type="text" name="legalhouse" class="form__input legalhouse req" onchange="check(this.value,this.id)" placeholder="Дом">
+                        <label for="legalhouse" class="form__label">Дом/офис/квартира</label>
+                        <div class="index"><input id="legalhouse" type="text" name="legalhouse" class="form__input legalhouse req" onchange="check(this.value,this.id)" placeholder="Дом"></div>
                         <input id="legalhouse" type="text" name="legalapartment" class="form__input legalhouse req" onchange="check(this.value,this.id)" placeholder="Офис/квартира">
                     </div>
                     <div class="form__item ">
                         <label for="legalindex" class="form__label">Индекс</label>
-                        <div class="index"><input id="legalindex" type="text" name="legalindex" class="form__input req" onchange=" check(this.value,this.id)"></div>
+                       <input id="legalindex" type="text" name="legalindex" class="form__input req" onchange=" check(this.value,this.id)">
                     </div>
                     <div class="form__checkbox post-checkbox">
                         <p for="legalPostAdress" class="form__label post">Почтовый адрес</p>
@@ -162,13 +162,13 @@
                     <div class="time">
                         <p class="form__label">Режим работы</p>
                         <div class="time__work">
-                            <div class="time__div">Пн<input class="time__input" type="time" id="time" name="timeMonFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-                            <div class="time__div">Вт<input class="time__input" type="time" id="time" name="timeTutFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-                            <div class="time__div">Ср<input class="time__input" type="time" id="time" name="timeWenFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-                            <div class="time__div">Чт<input class="time__input" type="time" id="time" name="timeThuFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-                            <div class="time__div">Пт<input class="time__input" type="time" id="time" name="timeFriFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-                            <div class="time__div">Сб<input class="time__input" type="time" id="time" name="timeSunFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
-                            <div class="time__div">Вс<input class="time__input" type="time" id="time" name="timeSatFrom"/><input class="time__input" type="time" id="time" name="timeMonTo"/></div>
+                            <div class="time__div">Пн<input class="time__input" type="time" id="time" name="timeMonFrom" max="24:59" /><input class="time__input" type="time" id="time" name="timeMonTo" max="24:59"/></div>
+                            <div class="time__div">Вт<input class="time__input" type="time" id="time" name="timeTutFrom" max="24:59" /><input class="time__input" type="time" id="time" name="timeTutTo" max="24:59"/></div>
+                            <div class="time__div">Ср<input class="time__input" type="time" id="time" name="timeWenFrom" max="24:59" /><input class="time__input" type="time" id="time" name="timeWenTo" max="24:59"/></div>
+                            <div class="time__div">Чт<input class="time__input" type="time" id="time" name="timeThuFrom" max="24:59" /><input class="time__input" type="time" id="time" name="timeThuTo" max="24:59"/></div>
+                            <div class="time__div">Пт<input class="time__input" type="time" id="time" name="timeFriFrom" max="24:59" /><input class="time__input" type="time" id="time" name="timeFriTo" max="24:59"/></div>
+                            <div class="time__div">Сб<input class="time__input" type="time" id="time" name="timeSunFrom" max="24:59" /><input class="time__input" type="time" id="time" name="timeSunTo" max="24:59"/></div>
+                            <div class="time__div">Вс<input class="time__input" type="time" id="time" name="timeSatFrom" max="24:59" /><input class="time__input" type="time" id="time" name="timeSatTo" max="24:59"/></div>
                         </div>
                     </div>
                     <div class="form__item">
@@ -190,7 +190,7 @@
                         <p>Европейская / Белорусская / Домашняя / Азиатская / Русская / Итальянская / Грузинская / Китайская / Корейская / Авторская / Немецкая / Турецкая / Мексиканская / Индийская / Украинская / Испанская / Тайская</p>
                     </div>
                     <div class="form__item">
-                        <div class="form__title">Самовывоз?</div>
+                        <div class="form__title">Самовывоз</div>
                         <div class="form__item">
                             <select name="pickup" class="select pickup">
                                 <option value="Да">Да</option>
@@ -222,7 +222,7 @@
                     <p class="text-subtitle last">Выберите подключаемые услги</p>
                     <div class="form__checkbox">
                         <input id="orderNow" type="checkbox" name="orderNow" class="checkbox__input">
-                        <label for="orderNow" class="сheckbox__label сheckbox__label--bold">Заказ прямо сейчас!
+                        <label for="orderNow" class="сheckbox__label сheckbox__label--bold">Заказ прямо сейчас
                             <p>Клиенты смогут сделать заказ в приложении, непосредственно находясь в Вашем заведении (без участия кассира и/или официанта).
                                 * Способ оплаты - только в приложении банковской картой.</p>
                     </div>
@@ -235,7 +235,7 @@
 
                     <div class="form__checkbox">
                         <input id="preOderPlace" type="checkbox" name="preOderPlace" class="checkbox__input radio-chek">
-                        <label for="preOderPlace" class="сheckbox__label сheckbox__label--bold">Предзаказ на месте!
+                        <label for="preOderPlace" class="сheckbox__label сheckbox__label--bold">Предзаказ на месте
                         <p>Ваши клиенты смогут оформить заказ через приложение к определенному времени.</p>
                     </div>
                 <div class="form__item radio">

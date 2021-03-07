@@ -92,24 +92,7 @@
         }        
     }
 
-    &__item.error{
-        &::after{
-            content: url('../image/field/cross.svg');
-            position: absolute;
-            top: 15px;
-            right:-25px;
-          
-        }
-    }
-    &__item.ok{
-        &::after{
-            content: url('../image/field/ok.svg');
-            position: absolute;
-            top: 15px;
-            right:-25px;
-          
-        }
-    }
+
     &__label {
         max-width: 170px;
         line-height: 20px;
@@ -132,10 +115,12 @@
     #legalindex{
         max-width: 152px;
         padding-left: 10px;
+        margin-right: 215px;
     }
     .index {
-        width: 380px;
+        position: relative;
     }
+  
     .index-flex {
         @include flex-position(row,stretch,center)
     }
@@ -204,6 +189,24 @@
         top: 0px;
         left: -24px;
     }
+    }
+}
+.error{
+    &::after{
+        content: url('../image/field/cross.svg');
+        position: absolute;
+        top: 15px;
+        right:-25px;
+      
+    }
+}
+.ok{
+    &::after{
+        content: url('../image/field/ok.svg');
+        position: absolute;
+        top: 15px;
+        right:-25px;
+      
     }
 }
 

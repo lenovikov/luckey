@@ -199,7 +199,7 @@ function addStep(){
 
 function nextPrev(n) {
   let tab = document.querySelectorAll('.position')
-  if(n==1 && !(validateForm())) {return false}
+  // if(n==1 && !(validateForm())) {return false}
    
   tab[currentTab].style.display = "none";
   currentTab = currentTab + n
@@ -207,8 +207,29 @@ function nextPrev(n) {
   if (currentTab >= tab.length) {
       return false;
   }
+
+  if(n===-1){
+    deleteCurrentTab()
+  }
   showTab(currentTab);
 }
+
+function deleteCurrentTab(){
+  let x = document.querySelectorAll(".position");
+  let a = document.querySelectorAll(".step");
+  let y = x[currentTab+1].querySelectorAll('.req');
+  for(i=0;i <y.length;i++){
+    if(currentTab > 1&& y[i].value ==''){
+      return delElem()
+    }
+  }
+  function delElem(){
+    x[currentTab+1].remove();
+    a[currentTab+1].remove();
+  }
+}
+
+
 
 function fixStepIndicator(n) {
   let x = document.querySelectorAll(".step");
