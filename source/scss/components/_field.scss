@@ -6,6 +6,9 @@
 .header-field {
     background: url('../image/field/background-color.png') no-repeat center/cover ;
     width: 100%;
+    @include field {
+        background: url('../image/field/field-bck.jpg') no-repeat center/cover ;
+    }
     &__wrapper{
         width: 80%;
         margin-left: auto;
@@ -399,10 +402,9 @@
         @include flex-position(row,space-around,stretch)
     }
     &__div {
-        @include flex-position(column,space-around,center);
-        max-width:70px;
+        @include flex-position(column,stretch,center);
         @include field {
-            margin: 0px 5px;
+            margin: 10px 10px;
         }
     }
     &__input {
