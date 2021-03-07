@@ -185,7 +185,6 @@ function showTab(n) {
 const buttonAdd = document.querySelector('.button-add')
   buttonAdd&&buttonAdd.addEventListener('click', ()=> {
   addStep()
-  nextPrev(1)
   })
 
 function addStep(){
@@ -194,6 +193,7 @@ function addStep(){
       <span class="step">${x.length+1}</span>
       `)
       addRest(x.length-1)
+      nextPrev(1)
 }
 
 function nextPrev(n) {
@@ -202,11 +202,7 @@ function nextPrev(n) {
    
   tab[currentTab].style.display = "none";
   currentTab = currentTab + n
-  if(currentTab === tab.length){
-    
-  }
-
-
+ 
   if (currentTab >= tab.length) {
       return false;
   }
