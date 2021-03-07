@@ -196,6 +196,7 @@ function addStep(){
       nextPrev(1)
 }
 
+
 function nextPrev(n) {
   let tab = document.querySelectorAll('.position')
   if(n==1 && !(validateForm())) {return false}

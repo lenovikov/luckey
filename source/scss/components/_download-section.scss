@@ -28,7 +28,7 @@
         position: relative;
         left: -123px;
         width: 60%;
-        height: 600px;
+        height: 100%;
         @include hd {
             left: -30px;
             flex-wrap: nowrap;
