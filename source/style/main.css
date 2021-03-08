@@ -44,6 +44,9 @@ button {
 input {
   outline: none;
 }
+input {
+  -webkit-user-select: text;
+}
 
 /* make sure to set some focus styles for accessibility */
 :focus {
@@ -2342,7 +2345,7 @@ textarea {
       -ms-flex-align: stretch;
           align-items: stretch;
   position: relative;
-  left: -123px;
+  left: -60px;
   width: 60%;
   height: 100%;
 }
@@ -3317,7 +3320,7 @@ textarea {
 
 @media (max-width: 580px) {
   .form {
-    padding: 0px 10px;
+    padding: 0px 20px 0 10px;
   }
 }
 
