@@ -26,7 +26,7 @@
     &__image {
         @include flex-position(row,stretch,stretch);
         position: relative;
-        left: -123px;
+        left: -60px;
         width: 60%;
         height: 100%;
         @include hd {
