@@ -211,7 +211,7 @@ function addStep(){
 
 function nextPrev(n) {
   let tab = document.querySelectorAll('.position')
-  // if(n==1 && !(validateForm())) {return false}
+  if(n==1 && !(validateForm())) {return false}
    
   tab[currentTab].style.display = "none";
   currentTab = currentTab + n
