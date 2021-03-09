@@ -1,5 +1,8 @@
 .discription {
-   
+    padding-bottom: 300px;
+    @include big-tablet{
+        padding-bottom: 0px;
+    }
     &__row {
         padding-top: 200px;
         @include flex-position(row,center,stretch);

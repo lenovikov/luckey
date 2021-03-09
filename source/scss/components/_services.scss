@@ -9,7 +9,7 @@
     }
 }
 .services {
-    padding-top: 300px;
+    
     @include big-tablet {
         padding-top: 0;
         background: $gradient;

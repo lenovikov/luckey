@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="source/js/field.js"></script>
     <link rel="stylesheet" href="source/style/main.css">
-    <title img src="/source/image/field/logo.svg">luckey field</title>
+    <title>luckey field</title>
 </head>
 <body>
     <div class="field__wrapper">
@@ -69,7 +69,7 @@
                     </div>
                     <div class="form__item ">
                         <label for="legalindex" class="form__label">Индекс</label>
-                       <input id="legalindex" type="text" name="legalindex" class="form__input req" onchange=" check(this.value,this.id)">
+                       <input id="legalindex" type="text" name="legalindex" class="form__input req"   maxlength="6" onchange=" check(this.value,this.id)">
                     </div>
                     <div class="form__checkbox post-checkbox">
                         <p for="legalPostAdress" class="form__label post">Почтовый адрес</p>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="form__item legalPostAdress">
                         <label for="legalPostAdressInd" class="form__label">Индекс</label>
-                        <div class="index"><input id="legalPostAdressInd" type="text" name="legalPostAdressInd" class="form__input" onchange="check(this.value,this.id)"></div>
+                        <div class="index"><input id="legalPostAdressInd" type="text" name="legalPostAdressInd" class="form__input"   maxlength="6" onchange="check(this.value,this.id)"></div>
                     </div>
                     <div class="form__item legalPostAdress">
                         <label for="legalPostAdressCit" class="form__label">Город</label>
@@ -129,11 +129,11 @@
                         <input id="emailContactFace" type="email" name="emaiContactFace" class="form__input req" onchange=" checkInput(this.value,this.id)">
                     </div>
                     <div class="form__checkbox сheckbox__label--padding">
-                        <input id="services" type="checkbox" name="servicesBabk" class="checkbox__input req">
+                        <input id="services" type="checkbox" name="servicesBabk" class="checkbox__input req" onchange=" checkBox(this.checked,this.id)">
                         <label for="services" class="сheckbox__label">Подтверждаю своё ознакомление и соглашаюсь с условиями <a href="https://storage.luckey.by/docs/public_offer.docx"> Оферты на оказание услуг</a> Luckey, а также обязуюсь сохранять в тайне и считать конфиденциальной информацию о коммерческих условиях сотрудничества, технических особенностях сервиса Luckey и его функционала, а также иную информацию, переданную Luckey</label>
                     </div>
                     <div class="form__checkbox">
-                        <input id="dataProcessing" type="checkbox" name="dataProcessing" class="checkbox__input req">
+                        <input id="dataProcessing" type="checkbox" name="dataProcessing" class="checkbox__input req" onchange="checkBox(this.checked,this.id)">
                         <label for="dataProcessing" class="сheckbox__label">Я даю свое согласие на передачу Luckey данных, в том числе моей персональной информации, указанных в настоящей анкете, и согласен с тем, что указанные данные, в том числе моя персональная информация, будут обрабатываться на условиях, определенных <a href="https://storage.luckey.by/docs/public_offer.docx">Офертой на оказание услуг</a>.</label>
                     </div>
                 </div> <!-- bank-data -->
@@ -188,7 +188,7 @@
                     <div class="form__item">
                         <div class="form__title">Самовывоз</div>
                         <div class="form__item">
-                            <select name="pickup" class="select pickup">
+                            <select name="pickup" class="select pickup" onchange="checkSel(this.options[selectedIndex].value)">
                                 <option value="Да">Да</option>
                                 <option value="Нет">Нет</option>
                             </select>

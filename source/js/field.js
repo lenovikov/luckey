@@ -66,9 +66,16 @@ function validateEmail(value){
   }
 }
 function check(value,id){
-  if(value ==''){
+  if(value ===''){
     addError(id)
   } else {
+    addOk(id)
+  }
+}
+function checkBox(check,id){
+  if(check === false){
+    addError(id)
+  } else if(check === true){
     addOk(id)
   }
 }
@@ -104,11 +111,11 @@ function validateFormSubm() {
   y = x[currentTab].querySelectorAll('.req');
   for (i = 0; i < y.length; i++) {
 
-    if(y[i].type =='checkbox' && y[i].checked === false){
+    if(y[i].type =='checkbox' && y[i].checked == false){
       y[i].parentElement.classList.add("error")
       valid = false
   
-    }else if (y[i].value == "") {
+    }else if (y[i].value === "") {
       y[i].parentElement.classList.add("error")
       valid = false;
     }else {
@@ -124,17 +131,19 @@ function validateForm() {
   let y
   let i
   let valid = true;
+  console.log(valid);
   x = document.querySelectorAll(".position");
   y = x[currentTab].querySelectorAll('.req');
+  console.dir(y);
   for (i = 0; i < y.length; i++) {
-
-    if(y[i].type =='checkbox' && y[i].checked === false){
+    if(y[i].type ==='checkbox' && y[i].checked === false){
       y[i].parentElement.classList.add("error")
       valid = false
-  
-    }else if (y[i].value == "") {
+      console.log(y[i].value);
+    }else if (y[i].value === "") {
       y[i].parentElement.classList.add("error")
       valid = false;
+      console.log('val');
     }else {
       y[i].parentElement.classList.remove("error")
     }
@@ -142,6 +151,7 @@ function validateForm() {
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
+  console.log(valid);
   return valid;
 }
 
@@ -164,7 +174,9 @@ function showTab(n) {
       }
   
     if(n < tab.length-1 ){
-      scroll(0,600)
+      if(n>=1){
+        scroll(0,600)
+      }
       if(n>=2){
         document.querySelector('.button-add').style.display ="block"
       }else if(n<2){
@@ -199,7 +211,7 @@ function addStep(){
 
 function nextPrev(n) {
   let tab = document.querySelectorAll('.position')
-  if(n==1 && !(validateForm())) {return false}
+  // if(n==1 && !(validateForm())) {return false}
    
   tab[currentTab].style.display = "none";
   currentTab = currentTab + n
@@ -219,7 +231,7 @@ function deleteCurrentTab(){
   let a = document.querySelectorAll(".step");
   let y = x[currentTab+1].querySelectorAll('.req');
   for(i=0;i <y.length;i++){
-    if(currentTab > 1&& y[i].value ==''){
+    if(currentTab > 1&& y[i].value ===''){
       return delElem()
     }
   }
@@ -289,9 +301,9 @@ function addRest(value){
   <p>Европейская / Белорусская / Домашняя / Азиатская / Русская / Итальянская / Грузинская / Китайская / Корейская / Авторская / Немецкая / Турецкая / Мексиканская / Индийская / Украинская / Испанская / Тайская</p>
 </div>
 <div class="form__item">
-  <div class="form__title">Самовывоз?</div>
+  <div class="form__title">Самовывоз</div>
   <div class="form__item">
-      <select name="pickup${value-1}" class="select">
+      <select name="pickup${value-1}" class="select pickup" onchange="checkSel(this.options[selectedIndex].value)">
           <option value="Да">Да</option>
           <option value="Нет">Нет</option>
       </select>
@@ -341,15 +353,18 @@ if(buttonRadio.checked === true) {
 }
 })
 
-let select = document.querySelector('.pickup')
+function checkSel(val) {
+  let x  
+  let y
+  x = document.querySelectorAll(".position");
+  y = x[currentTab].querySelector('.discauntPickup');
 
-select.addEventListener('change',()=> {
-  if(select.options[select.selectedIndex].value==="Нет"){
-    document.querySelector('.discauntPickup').style.display="none"
+  if(val==="Нет"){
+    y.style.display="none"
   }else{
-    document.querySelector('.discauntPickup').style.display="block"
+    y.style.display="block"
   }
-})
+}
 
 let deposit = document.querySelector('.deposit')
 
@@ -368,15 +383,14 @@ function resetField(){
   let y
   x = document.querySelectorAll(".position");
   y = x[currentTab].querySelectorAll('.req');
-
-
   for (i = 0; i < y.length; i++) {
+    if(y[i].type ==='checkbox'){
+      y[i].checked = false;
+    } else
     y[i].value = '';
-    y[i].checked = false;
   }
-
   for (i = 0; i < y.length; i++) {
-  if (y[i].value == "") {
+  if (y[i].value === "" || y[i].checked === false) {
     y[i].parentElement.classList.remove("ok") 
     y[i].parentElement.classList.add("error") }
   }

@@ -44,9 +44,6 @@ button {
 input {
   outline: none;
 }
-input {
-  -webkit-user-select: text;
-}
 
 /* make sure to set some focus styles for accessibility */
 :focus {
@@ -1299,10 +1296,6 @@ textarea {
   }
 }
 
-.services {
-  padding-top: 300px;
-}
-
 @media (max-width: 991px) {
   .services {
     padding-top: 0;
@@ -1824,6 +1817,16 @@ textarea {
 
 .services__item .slick-slide {
   width: 380px;
+}
+
+.discription {
+  padding-bottom: 300px;
+}
+
+@media (max-width: 991px) {
+  .discription {
+    padding-bottom: 0px;
+  }
 }
 
 .discription__row {
@@ -3434,6 +3437,7 @@ textarea {
 }
 
 .form__checkbox {
+  position: relative;
   margin-bottom: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
