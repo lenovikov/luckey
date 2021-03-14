@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 body:formData
             })
             if(response.ok) {
+                showModal()
                 form.reset()
             }else {
                 alert('ошибка')
@@ -29,6 +30,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
     }
 })
+
+const wrapper = document.querySelector('.field__wrapper')
+function showModal(){
+ 
+  wrapper.insertAdjacentHTML('afterbegin',` <div class="modal">
+  <div class="modal__content">
+      <div class="modal__img"></div>
+      <h2 class="modal__title">Анкета отправлена!</h2>
+      <p class="modal__subtitle">Дальнейшую информацию и коммерческие условия сотрудничества мы отправим на Вашу почту</p>
+      <div class="modal__exit"></div>
+  </div>
+</div>`)
+wrapper.classList.toggle('open')
+document.querySelector('body').classList.toggle('open')
+scroll(0,0)
+document.querySelector('.modal__exit').addEventListener('click',(event)=>{
+  document.querySelector('.modal').remove()
+  wrapper.classList.toggle('open')
+  document.querySelector('body').classList.toggle('open')
+})
+}
+
 
 
 function checkInput(value,id){

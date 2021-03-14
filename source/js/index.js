@@ -11,8 +11,6 @@ let textTitle = document.querySelector('.main__title')
 let mainImage =document.querySelector('.main__image')
 let miniBlocks = document.querySelectorAll('.discription__block')
 
-
-
 //! прокрутка
 
 $(document).ready(function(){
@@ -166,15 +164,3 @@ window.onscroll = function() {
  
   prevScrollpos = currentScrollPos;
 }
-
-
-
-
-
-
-
-
-
-
-
-
