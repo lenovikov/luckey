@@ -135,7 +135,7 @@
         position: relative;
         @include flex-position(row,space-around,stretch);
         padding-top: 1.7em;
-        margin-bottom: calc(100px + 50 * (100vw / 1920));
+        margin-bottom: 70px;
         max-width: 400px;
         &::before{
             content:'';
