@@ -750,6 +750,11 @@ textarea {
 .wrapper {
   overflow: hidden;
   background-color: #222222;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* IE 10+ */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .container {
@@ -974,7 +979,7 @@ textarea {
       -ms-flex-align: stretch;
           align-items: stretch;
   padding-top: 1.7em;
-  margin-bottom: calc(100px + 50 * (100vw / 1920));
+  margin-bottom: 70px;
   max-width: 400px;
 }
 
@@ -3157,6 +3162,7 @@ textarea {
 
 .field__wrapper {
   width: 100%;
+  position: relative;
 }
 
 .header-field {
@@ -4100,4 +4106,121 @@ textarea {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+
+.modal {
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(28, 24, 34, 0.6);
+}
+
+.modal__img {
+  margin: 89px 0 40px 0;
+  width: 120px;
+  height: 120px;
+  background: url("../image/field/modal.svg") no-repeat center;
+}
+
+.modal__content {
+  position: relative;
+  margin: 0 auto;
+  max-width: 780px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffff;
+}
+
+.modal__title {
+  padding-bottom: .3em;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: calc(30px + 12 * (100vw / 1920));
+  font-weight: 700;
+  font-style: normal;
+  color: #222325;
+}
+
+.modal__subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif,Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  font-style: normal;
+  padding-bottom: 5.5em;
+  line-height: 20px;
+  color: #222325;
+  max-width: 580px;
+  text-align: center;
+}
+
+.modal__exit {
+  position: absolute;
+  right: 44px;
+  top: 44px;
+  background: url("../image/field/exit.svg") no-repeat center;
+  width: 18px;
+  height: 18px;
+}
+
+.field__wrapper {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* IE 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.field__wrapper.open {
+  z-index: 5;
+}
+
+body.open {
+  overflow: hidden;
+}
+::-webkit-scrollbar{
+  width: 0px;
+  background: transparent;
+  -webkit-appearance: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  height: 0;
+  }
+  input {
+  -webkit-user-select: text; /* Chrome, Opera, Safari */
+  -moz-user-select: text; /* Firefox 2+ */
+  -ms-user-select: text; /* IE 10+ */
+  user-select: text; /* Standard syntax */
+  }
 /*# sourceMappingURL=main.css.map */
