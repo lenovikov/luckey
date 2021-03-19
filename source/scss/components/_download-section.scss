@@ -39,12 +39,12 @@
         @include tablet {
             left: 0;
             margin: 0 auto -100px;
-            width: 251px;
+            width: 330px;
             top: -120px;
             order: 1;
         }
         @include mobile {
-            width: 241px;
+            width: 100%;
         }
     }
 
@@ -112,9 +112,14 @@
             width: 70%;
         }
         @include tablet {
+            margin: 0px 10px 0px 1px;
             position: static;
-            width: 251px
+            max-width: 251px
         };
+        @include mobile {
+            margin: 0px 0px 0px 0px;
+            max-width: 241px;
+        }
 
         &.open {
             animation: movePhone  1s;
@@ -137,9 +142,14 @@
             width: 70%;
         }
         @include tablet {
+            margin: 0px 0px 0px 28px;
             position: static;
-            width: 241px;
+            max-width: 251px;
         };  
+        @include mobile {
+            margin: 0px 35px 0px 35px;
+            max-width: 241px;
+        }
     }
 
     &__image-restaraunt.open {
@@ -176,6 +186,10 @@
     overflow: hidden;
     display: flex;
     height: 471px;
+    width: 330px;
+    @include mobile {
+        width: 100%;
+    }
 }
 
 .slick-track{

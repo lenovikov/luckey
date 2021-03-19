@@ -11,19 +11,20 @@ const errorLog = {
 
 const form = document.getElementById('form')
 document.addEventListener('DOMContentLoaded', ()=>{
-
+  
     form.addEventListener('submit',formSend)
     async function formSend(e) {
         e.preventDefault()
+      
         if(validateFormSubm()){
           let formData = new FormData(form)
             let response = await fetch('',{
-                method:'POST',
-                body:formData
+              method:'POST',
+              body:formData
             })
             if(response.ok) {
-                showModal()
-                form.reset()
+              showModal()
+              form.reset()
             }else {
                 alert('ошибка')
             }
@@ -196,10 +197,11 @@ function showTab(n) {
       prevBut.style.display = "block";
       }
   
-    if(n < tab.length-1 ){
       if(n>=1){
         scroll(0,600)
       }
+    if(n < tab.length-1 ){
+     
       if(n>=2){
         document.querySelector('.button-add').style.display ="block"
       }else if(n<2){

@@ -2376,7 +2376,7 @@ textarea {
   .download-section__image {
     left: 0;
     margin: 0 auto -100px;
-    width: 251px;
+    width: 330px;
     top: -120px;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -2386,7 +2386,7 @@ textarea {
 
 @media (max-width: 479px) {
   .download-section__image {
-    width: 241px;
+    width: 100%;
   }
 }
 
@@ -2498,8 +2498,16 @@ textarea {
 
 @media (max-width: 767px) {
   .download-section__logo {
+    margin: 0px 10px 0px 1px;
     position: static;
-    width: 251px;
+    max-width: 251px;
+  }
+}
+
+@media (max-width: 479px) {
+  .download-section__logo {
+    margin: 0px 0px 0px 0px;
+    max-width: 241px;
   }
 }
 
@@ -2534,8 +2542,16 @@ textarea {
 
 @media (max-width: 767px) {
   .download-section__image-restaraunt {
+    margin: 0px 0px 0px 28px;
     position: static;
-    width: 241px;
+    max-width: 251px;
+  }
+}
+
+@media (max-width: 479px) {
+  .download-section__image-restaraunt {
+    margin: 0px 35px 0px 35px;
+    max-width: 241px;
   }
 }
 
@@ -2605,6 +2621,13 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   height: 471px;
+  width: 330px;
+}
+
+@media (max-width: 479px) {
+  .download-section .slick-list {
+    width: 100%;
+  }
 }
 
 .slick-track {
@@ -4223,4 +4246,5 @@ body.open {
   -ms-user-select: text; /* IE 10+ */
   user-select: text; /* Standard syntax */
   }
+  
 /*# sourceMappingURL=main.css.map */

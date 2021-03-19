@@ -17,7 +17,7 @@ $(document).ready(function(){
     $('.services__list').slick({
         slidesToShow:3,
         responsive: [{
-           
+            
             breakpoint: 991,
             settings: 'unslick'
         }]
@@ -27,7 +27,7 @@ $(document).ready(function(){
     $('.download-section__image').slick({
         slidesToShow:1,
         arrows : false,
-        
+       
         responsive: [{
             
                 breakpoint: 3048,
